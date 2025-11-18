@@ -1,0 +1,152 @@
+.formCard {
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: radial-gradient(circle at top, rgba(251, 191, 36, 0.09), transparent),
+    rgba(15, 23, 42, 0.95);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.95);
+  padding: 1.3rem 1.2rem 1.4rem 1.2rem;
+}
+
+.formHeader {
+  margin-bottom: 0.9rem;
+}
+
+.formHeader h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.formHeader p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .formGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #9ca3af;
+}
+
+.requiredStar {
+  color: #f97316;
+  margin-left: 0.15rem;
+}
+
+input,
+select,
+textarea {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  font-family: inherit;
+}
+
+textarea {
+  border-radius: 12px;
+  min-height: 96px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.6);
+  background: rgba(15, 23, 42, 1);
+}
+
+input.error,
+select.error,
+textarea.error {
+  border-color: var(--danger);
+}
+
+.helperText {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.errorText {
+  font-size: 0.75rem;
+  color: var(--danger);
+  margin-top: 0.1rem;
+  display: none;
+}
+
+.errorText.show {
+  display: block;
+}
+
+.successBanner,
+.errorBanner {
+  font-size: 0.8rem;
+  border-radius: 999px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.7rem;
+  display: none;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.successBanner.show,
+.errorBanner.show {
+  display: flex;
+}
+
+.successBanner {
+  background: rgba(22, 163, 74, 0.18);
+  border: 1px solid rgba(34, 197, 94, 0.8);
+  color: #bbf7d0;
+}
+
+.errorBanner {
+  background: rgba(153, 27, 27, 0.2);
+  border: 1px solid rgba(248, 113, 113, 0.8);
+  color: #fecaca;
+}
+
+.formFooter {
+  margin-top: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.formNote {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  max-width: 17rem;
+}
+
+.formLoading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+

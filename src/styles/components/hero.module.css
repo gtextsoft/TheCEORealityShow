@@ -1,0 +1,316 @@
+.hero {
+  max-width: 1120px;
+  margin: 2rem auto 3rem auto;
+  padding: 1.5rem 1.25rem 3rem 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: radial-gradient(circle at 0 0, rgba(252, 211, 77, 0.16), transparent),
+    rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  font-size: 0.78rem;
+  color: #e5e7eb;
+  gap: 0.45rem;
+  width: fit-content;
+}
+
+.heroBadgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #22c55e, #15803d);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+}
+
+.heroBadge span {
+  color: #fde68a;
+  font-weight: 600;
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.heroTitle .highlight {
+  background: linear-gradient(to right, #f97316, #22c55e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  max-width: 34rem;
+}
+
+.heroSubtitle strong {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.heroPrizes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .heroPrizes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.prizeCard {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.08), transparent),
+    rgba(15, 23, 42, 0.9);
+  padding: 0.85rem 0.9rem;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.prizeLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+}
+
+.prizeValue {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.prizeValue span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.heroCtaGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.btnPrimary {
+  border-radius: 999px;
+  padding: 0.8rem 1.8rem;
+  background: linear-gradient(135deg, #f97316, #22c55e);
+  border: none;
+  font-weight: 700;
+  font-size: 0.96rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #020617;
+  box-shadow: 0 22px 50px rgba(252, 211, 77, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 26px 60px rgba(251, 191, 36, 0.4);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnOutline {
+  border-radius: 999px;
+  padding: 0.75rem 1.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.8);
+  font-size: 0.88rem;
+  cursor: pointer;
+  color: #e5e7eb;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btnOutline:hover {
+  background: rgba(15, 23, 42, 1);
+  border-color: #e5e7eb;
+}
+
+.heroMeta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 0.75rem;
+}
+
+.heroMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.heroRight {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.heroImageContainer {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.3), rgba(15, 118, 110, 0.3));
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.9);
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroCard {
+  border-radius: 24px;
+  padding: 1.1rem;
+  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.09), transparent),
+    rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.95);
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.heroCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.heroCardTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+}
+
+.heroStatusPill {
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border: 1px solid rgba(34, 197, 94, 0.7);
+  color: #bbf7d0;
+  background: rgba(21, 128, 61, 0.2);
+}
+
+.heroMainText {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.heroMainSubtext {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.heroCountdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.heroCountdownItem {
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.5rem 0.35rem;
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.heroCountdownNumber {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.heroCountdownLabel {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.heroCtaNote {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.heroTagline {
+  position: absolute;
+  right: -2rem;
+  bottom: 0.5rem;
+  transform: rotate(-90deg);
+  transform-origin: right;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(148, 163, 184, 0.7);
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(249, 115, 22, 0.24), transparent),
+    radial-gradient(circle at 80% 100%, rgba(34, 197, 94, 0.3), transparent);
+  opacity: 0.9;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: -1;
+}
+

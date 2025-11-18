@@ -1,0 +1,211 @@
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem 1.25rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 720px) {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sectionTitle span {
+  color: #f97316;
+}
+
+.sectionSubtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 26rem;
+}
+
+.sectionTag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 900px) {
+  .grid2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
+  gap: 1.75rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 960px) {
+  .grid3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: var(--shadow-soft);
+  padding: 1.2rem 1.1rem;
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.bulletList {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.bulletList li {
+  margin-left: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.pillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+}
+
+.pill {
+  font-size: 0.72rem;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 720px) {
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.step {
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.75rem 0.85rem;
+  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.08), transparent),
+    rgba(15, 23, 42, 0.95);
+}
+
+.stepNumber {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #9ca3af;
+  margin-bottom: 0.25rem;
+}
+
+.stepTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.stepText {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+}
+
+.eligibilityList li {
+  margin-left: 1.1rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.faqItem {
+  transition: all 0.3s ease;
+}
+
+.faqItem + .faqItem {
+  margin-top: 0.85rem;
+  border-top: 1px dashed rgba(148, 163, 184, 0.4);
+  padding-top: 0.75rem;
+}
+
+.faqQ {
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  user-select: none;
+}
+
+.faqQ:hover {
+  color: #e5e7eb;
+}
+
+.faqIcon {
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.faqItem.open .faqIcon {
+  transform: rotate(180deg);
+}
+
+.faqA {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, margin-top 0.3s ease;
+}
+
+.faqItem.open .faqA {
+  max-height: 500px;
+  margin-top: 0.5rem;
+}
+
