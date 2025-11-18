@@ -2,7 +2,6 @@ import FAQ from './FAQ';
 import AnimatedSection from './AnimatedSection';
 import styles from '../styles/components/sections.module.css';
 import heroStyles from '../styles/components/hero.module.css';
-import { smoothScrollTo } from '../utils/scroll';
 
 const eligibilityCriteria = [
   'Must be at least 21 years old at the time of application.',

@@ -138,7 +138,7 @@ export default function MailingBossForm() {
       }
 
       // Submit to MailingBoss endpoint
-      const response = await fetch(MAILINGBOSS_ENDPOINT, {
+      await fetch(MAILINGBOSS_ENDPOINT, {
         method: 'POST',
         body: formData,
         mode: 'no-cors', // MailingBoss may not support CORS
