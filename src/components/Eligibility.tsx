@@ -71,7 +71,7 @@ export default function Eligibility() {
       <div style={{ marginTop: '3rem', textAlign: 'center' }}>
         <button 
           className={heroStyles.btnPrimary}
-          onClick={() => window.open('https://app.mailingboss.com/lists/691cc8c4832c9/subscribe', '_blank')}
+          onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGTdoSAiEbuWCMTinTVbDDJt23hKXwE-RAaasDFjkAj58MXQ/viewform?usp=publish-editor', '_blank')}
           style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}
         >
           Apply Now - Start Your Application

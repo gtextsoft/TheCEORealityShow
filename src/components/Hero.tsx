@@ -14,7 +14,7 @@ interface HeroProps {
 export default function Hero({ deadline, prizes }: HeroProps) {
   const handleCtaClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    window.open('https://app.mailingboss.com/lists/691cc8c4832c9/subscribe', '_blank');
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGTdoSAiEbuWCMTinTVbDDJt23hKXwE-RAaasDFjkAj58MXQ/viewform?usp=publish-editor', '_blank');
   };
 
   return (
@@ -101,7 +101,7 @@ export default function Hero({ deadline, prizes }: HeroProps) {
 
           <button 
             className={styles.btnPrimary} 
-            onClick={() => window.open('https://app.mailingboss.com/lists/691cc8c4832c9/subscribe', '_blank')} 
+            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGTdoSAiEbuWCMTinTVbDDJt23hKXwE-RAaasDFjkAj58MXQ/viewform?usp=publish-editor', '_blank')} 
             style={{ width: '100%', justifyContent: 'center' }} 
             aria-label="Start your application"
           >
