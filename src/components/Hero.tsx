@@ -69,8 +69,8 @@ export default function Hero({ deadline, prizes }: HeroProps) {
 
       <div className={styles.heroRight}>
         <div className={styles.heroImageContainer}>
-          <img 
-            src="/images/hero-ceo.jpg" 
+          <img
+            src="/images/hero-ceo.jpg"
             alt="CEO Reality Show - Transform your career"
             className={styles.heroImage}
             onError={(e) => {
@@ -99,14 +99,32 @@ export default function Hero({ deadline, prizes }: HeroProps) {
 
           <CountdownTimer deadline={deadline} />
 
-          <button 
-            className={styles.btnPrimary} 
-            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGTdoSAiEbuWCMTinTVbDDJt23hKXwE-RAaasDFjkAj58MXQ/viewform?usp=publish-editor', '_blank')} 
-            style={{ width: '100%', justifyContent: 'center' }} 
+          <button
+            className={styles.btnPrimary}
+            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGTdoSAiEbuWCMTinTVbDDJt23hKXwE-RAaasDFjkAj58MXQ/viewform?usp=publish-editor', '_blank')}
+            style={{ width: '100%', justifyContent: 'center' }}
             aria-label="Start your application"
           >
             Start Your Application
           </button>
+
+          <p className={styles.heroCtaNote} style={{
+            background: 'rgba(249, 115, 22, 0.1)',
+            padding: '0.75rem',
+            borderRadius: '8px',
+            border: '1px solid rgba(249, 115, 22, 0.3)',
+            marginBottom: '0.75rem'
+          }}>
+            <strong>📜 Certificate Required:</strong> You must have a Real Estate Course Certificate to apply.{' '}
+            <a
+              href="https://rim.stephenakintayofoundation.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'var(--primary)', textDecoration: 'underline', fontWeight: 'bold' }}
+            >
+              Get one here
+            </a> if you don't have it yet.
+          </p>
 
           <p className={styles.heroCtaNote}>
             No payment required at this stage. Shortlisted candidates will be contacted directly

@@ -4,6 +4,7 @@ import styles from '../styles/components/sections.module.css';
 import heroStyles from '../styles/components/hero.module.css';
 
 const eligibilityCriteria = [
+  'Must have a Real Estate Course Certificate (obtain one at rim.stephenakintayofoundation.org if needed).',
   'Must be at least 21 years old at the time of application.',
   'Open to Nigerians and Africans in the diaspora (valid travel documents may be required if selected).',
   'Must be able to commit to the full duration of filming if selected as a housemate.',
@@ -68,8 +69,56 @@ export default function Eligibility() {
         <FAQ items={faqItems} />
       </div>
 
+      {/* Certificate Requirement Notice */}
+      <div style={{
+        marginTop: '2.5rem',
+        padding: '2rem',
+        background: 'linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(234, 88, 12, 0.1) 100%)',
+        border: '2px solid var(--primary)',
+        borderRadius: '12px',
+        textAlign: 'center'
+      }}>
+        <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📜</div>
+        <h3 style={{
+          fontSize: '1.5rem',
+          marginBottom: '1rem',
+          color: 'var(--primary)'
+        }}>
+          Real Estate Course Certificate Required
+        </h3>
+        <p style={{
+          fontSize: '1.1rem',
+          lineHeight: '1.6',
+          marginBottom: '1.5rem',
+          maxWidth: '800px',
+          margin: '0 auto 1.5rem'
+        }}>
+          <strong>Important:</strong> To apply for The CEO Reality Show, you must have a <strong>Real Estate Course Certificate</strong>.
+          If you don't have one yet, you can get certified through our official program:
+        </p>
+        <button
+          className={heroStyles.btnPrimary}
+          onClick={() => window.open('https://rim.stephenakintayofoundation.org/', '_blank')}
+          style={{
+            fontSize: '1.1rem',
+            padding: '1rem 2.5rem',
+            marginBottom: '0.5rem'
+          }}
+        >
+          Get Your Certificate Here
+          <span aria-hidden="true">🎓</span>
+        </button>
+        <p style={{
+          marginTop: '1rem',
+          color: 'var(--text-muted)',
+          fontSize: '0.9rem'
+        }}>
+          Complete the course and obtain your certificate before submitting your application
+        </p>
+      </div>
+
       <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-        <button 
+        <button
           className={heroStyles.btnPrimary}
           onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGTdoSAiEbuWCMTinTVbDDJt23hKXwE-RAaasDFjkAj58MXQ/viewform?usp=publish-editor', '_blank')}
           style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}

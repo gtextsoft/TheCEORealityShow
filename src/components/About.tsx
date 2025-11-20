@@ -22,11 +22,73 @@ export default function About() {
         </p>
       </div>
 
+      {/* Certificate Requirement Banner */}
+      <div style={{
+        background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+        padding: '2rem',
+        borderRadius: '16px',
+        marginBottom: '3rem',
+        textAlign: 'center',
+        color: 'white',
+        boxShadow: '0 10px 40px rgba(249, 115, 22, 0.4)'
+      }}>
+        <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>📜</div>
+        <h3 style={{
+          fontSize: '2rem',
+          fontWeight: 'bold',
+          marginBottom: '1rem',
+          color: 'white'
+        }}>
+          IMPORTANT: Certificate Requirement
+        </h3>
+        <p style={{
+          fontSize: '1.25rem',
+          lineHeight: '1.8',
+          marginBottom: '1.5rem',
+          maxWidth: '900px',
+          margin: '0 auto 1.5rem',
+          color: 'rgba(255, 255, 255, 0.95)'
+        }}>
+          All applicants <strong>MUST</strong> have a <strong>Real Estate Course Certificate</strong> to be eligible for The CEO Reality Show.
+          <br />
+          Don't have one yet? No problem! Get certified through our official program below:
+        </p>
+        <button
+          onClick={() => window.open('https://rim.stephenakintayofoundation.org/', '_blank')}
+          style={{
+            background: 'white',
+            color: '#f97316',
+            fontSize: '1.25rem',
+            fontWeight: 'bold',
+            padding: '1.25rem 3rem',
+            borderRadius: '12px',
+            border: 'none',
+            cursor: 'pointer',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
+            transition: 'transform 0.2s',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }}
+          onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+          onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        >
+          Get Your Certificate Now 🎓
+        </button>
+        <p style={{
+          marginTop: '1rem',
+          fontSize: '0.95rem',
+          color: 'rgba(255, 255, 255, 0.9)'
+        }}>
+          📍 Visit: rim.stephenakintayofoundation.org
+        </p>
+      </div>
+
       <div className={styles.grid2}>
         <article className={styles.card}>
           <div className={aboutStyles.imageContainer}>
-            <img 
-              src="/images/about-show.jpg" 
+            <img
+              src="/images/about-show.jpg"
               alt="CEO Reality Show contestants in boardroom"
               className={aboutStyles.aboutImage}
               onError={(e) => {
@@ -69,8 +131,8 @@ export default function About() {
 
         <article className={styles.card} id="how-it-works">
           <div className={aboutStyles.imageContainer}>
-            <img 
-              src="/images/how-it-works.jpg" 
+            <img
+              src="/images/how-it-works.jpg"
               alt="Reality show process and steps"
               className={aboutStyles.aboutImage}
               onError={(e) => {
