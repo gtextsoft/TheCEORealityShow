@@ -68,17 +68,6 @@ export default function Hero({ deadline, prizes }: HeroProps) {
       </div>
 
       <div className={styles.heroRight}>
-        <div className={styles.heroImageContainer}>
-          <img
-            src="/images/drsa.jpeg"
-            alt="Dr. Stephen Akintayo - Organizer of The CEO Reality Show"
-            className={styles.heroImage}
-            onError={(e) => {
-              // Fallback to original image if drsa.jpeg doesn't load
-              e.currentTarget.src = '/images/hero-ceo.jpg';
-            }}
-          />
-        </div>
         <div className={styles.heroCard}>
           <div className={styles.heroGlow} aria-hidden="true"></div>
 

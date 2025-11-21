@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useScroll } from '../hooks/useScroll';
 import { scrollToTop } from '../utils/scroll';
 import styles from '../styles/components/scroll-to-top.module.css';
