@@ -80,7 +80,6 @@ export default function About() {
           fontSize: '0.95rem',
           color: 'rgba(255, 255, 255, 0.9)'
         }}>
-          📍 Visit: rim.stephenakintayofoundation.org
         </p>
       </div>
 
