@@ -29,10 +29,18 @@
 }
 
 .brandLogo {
-  width: 45px;
-  height: 45px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   display: block;
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px) {
+  .brandLogo {
+    width: 55px;
+    height: 55px;
+  }
 }
 
 .brandIcon {
