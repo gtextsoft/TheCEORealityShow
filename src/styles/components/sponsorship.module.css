@@ -52,7 +52,7 @@
   font-size: 1.5rem;
   font-weight: 800;
   text-align: center;
-  background: linear-gradient(to right, #0f766e, #22c55e);
+  background: linear-gradient(to right, var(--secondary), var(--primary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -78,7 +78,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #22c55e;
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -127,7 +127,7 @@
 .contributionAmount {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #f97316;
+  color: var(--primary);
   margin-bottom: 1rem;
 }
 
@@ -141,8 +141,8 @@
 .donationCard {
   border-radius: 24px;
   border: 3px solid rgba(249, 115, 22, 0.6);
-  background: radial-gradient(circle at top, rgba(251, 191, 36, 0.2), transparent),
-    radial-gradient(circle at bottom, rgba(249, 115, 22, 0.15), transparent),
+  background: radial-gradient(circle at top, rgba(249, 115, 22, 0.2), transparent),
+    radial-gradient(circle at bottom, rgba(15, 118, 110, 0.15), transparent),
     rgba(15, 23, 42, 0.98);
   padding: 3rem 2.5rem;
   text-align: center;
@@ -195,7 +195,7 @@
   font-weight: 800;
   margin-bottom: 1rem;
   color: #e5e7eb;
-  background: linear-gradient(to right, #f97316, #22c55e);
+  background: linear-gradient(to right, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

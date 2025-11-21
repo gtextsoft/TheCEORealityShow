@@ -27,7 +27,7 @@
 }
 
 .sectionTitle span {
-  color: #f97316;
+  color: var(--primary);
 }
 
 .sectionSubtitle {

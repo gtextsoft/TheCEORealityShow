@@ -21,3 +21,16 @@
   transform: scale(1.05);
 }
 
+.organizerGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .organizerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+

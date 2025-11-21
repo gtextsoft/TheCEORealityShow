@@ -72,7 +72,7 @@
 .prizeValue {
   font-size: 1.5rem;
   font-weight: 800;
-  background: linear-gradient(to right, #f97316, #22c55e);
+  background: linear-gradient(to right, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -94,7 +94,7 @@
 .totalValueCard {
   border-radius: 20px;
   border: 2px solid rgba(249, 115, 22, 0.5);
-  background: radial-gradient(circle at top, rgba(251, 191, 36, 0.15), transparent),
+  background: radial-gradient(circle at top, rgba(249, 115, 22, 0.15), transparent),
     rgba(15, 23, 42, 0.98);
   padding: 2rem 3rem;
   text-align: center;
@@ -112,7 +112,7 @@
 .totalValueAmount {
   font-size: 3rem;
   font-weight: 900;
-  background: linear-gradient(to right, #f97316, #22c55e, #f97316);
+  background: linear-gradient(to right, var(--primary), var(--secondary), var(--primary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

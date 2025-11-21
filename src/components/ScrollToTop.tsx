@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useScroll } from '../hooks/useScroll';
-import { smoothScrollTo } from '../utils/scroll';
+import { scrollToTop } from '../utils/scroll';
 import styles from '../styles/components/scroll-to-top.module.css';
 
 /**
@@ -8,24 +8,19 @@ import styles from '../styles/components/scroll-to-top.module.css';
  */
 export default function ScrollToTop() {
   const { isScrolled } = useScroll(300);
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    setIsVisible(isScrolled);
-  }, [isScrolled]);
-
-  const handleClick = () => {
-    smoothScrollTo('top');
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    scrollToTop();
   };
-
-  if (!isVisible) return null;
 
   return (
     <button
-      className={`${styles.scrollToTop} ${isVisible ? styles.visible : ''}`}
+      className={`${styles.scrollToTop} ${isScrolled ? styles.visible : ''}`}
       onClick={handleClick}
       aria-label="Scroll to top"
       title="Scroll to top"
+      type="button"
     >
       ↑
     </button>

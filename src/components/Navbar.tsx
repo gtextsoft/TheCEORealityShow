@@ -53,7 +53,18 @@ export default function Navbar() {
     <header className={`${styles.nav} ${isOpen ? styles.navOpen : ''}`} role="banner">
       <div className={styles.navInner}>
         <a href="#top" className={styles.brand} aria-label="Go to top">
-          <div className={styles.brandIcon} aria-hidden="true">SA</div>
+          <img 
+            src="/images/logo.png" 
+            alt="Stephen Akintayo Foundation Logo" 
+            className={styles.brandLogo}
+            onError={(e) => {
+              // Fallback to text icon if image fails to load
+              e.currentTarget.style.display = 'none';
+              const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+              if (fallback) fallback.style.display = 'flex';
+            }}
+          />
+          <div className={styles.brandIcon} aria-hidden="true" style={{ display: 'none' }}>SA</div>
           <div className={styles.brandText}>
             <span>Dr. Stephen Akintayo</span>
             <span>The CEO Reality Show</span>

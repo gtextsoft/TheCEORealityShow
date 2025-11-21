@@ -28,11 +28,18 @@
   gap: 0.75rem;
 }
 
+.brandLogo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  display: block;
+}
+
 .brandIcon {
   width: 38px;
   height: 38px;
   border-radius: 999px;
-  background: radial-gradient(circle at 30% 20%, #f97316, #0f766e);
+  background: radial-gradient(circle at 30% 20%, var(--primary), var(--secondary));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +86,7 @@
   bottom: -3px;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #f97316, #22c55e);
+  background: linear-gradient(to right, var(--primary), var(--secondary));
   transition: width 0.25s ease;
 }
 
@@ -94,7 +101,7 @@
 .navDonate {
   padding: 0.45rem 1rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #ef4444, #f97316);
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
   border: none;
   font-size: 0.85rem;
   font-weight: 700;
@@ -103,7 +110,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  box-shadow: 0 16px 35px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 16px 35px rgba(15, 118, 110, 0.4);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   white-space: nowrap;
   animation: pulseDonate 2s ease-in-out infinite;
@@ -111,23 +118,23 @@
 
 @keyframes pulseDonate {
   0%, 100% {
-    box-shadow: 0 16px 35px rgba(239, 68, 68, 0.4);
+    box-shadow: 0 16px 35px rgba(15, 118, 110, 0.4);
   }
   50% {
-    box-shadow: 0 20px 45px rgba(239, 68, 68, 0.6);
+    box-shadow: 0 20px 45px rgba(15, 118, 110, 0.6);
   }
 }
 
 .navDonate:hover {
   transform: translateY(-1px);
-  box-shadow: 0 22px 50px rgba(239, 68, 68, 0.5);
+  box-shadow: 0 22px 50px rgba(15, 118, 110, 0.5);
   animation: none;
 }
 
 .navCta {
   padding: 0.45rem 1.1rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #f97316, #22c55e);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   border: none;
   font-size: 0.85rem;
   font-weight: 600;
@@ -136,14 +143,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  box-shadow: 0 16px 35px rgba(248, 250, 252, 0.35);
+  box-shadow: 0 16px 35px rgba(249, 115, 22, 0.35);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   white-space: nowrap;
 }
 
 .navCta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 20px 45px rgba(248, 250, 252, 0.4);
+  box-shadow: 0 20px 45px rgba(249, 115, 22, 0.4);
 }
 
 .navCta span {

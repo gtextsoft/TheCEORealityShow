@@ -17,9 +17,19 @@ export default function Footer() {
   return (
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.footerInner}>
-        <p>
-          © {currentYear} The CEO Reality Show with Dr. Stephen Akintayo. All rights reserved.
-        </p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+          <img 
+            src="/images/logo.png" 
+            alt="Stephen Akintayo Foundation Logo" 
+            className={styles.footerLogo}
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+          <p>
+            © {currentYear} The CEO Reality Show with Dr. Stephen Akintayo. All rights reserved.
+          </p>
+        </div>
         <div className={styles.footerLinks}>
           <a href="#top" onClick={(e) => handleLinkClick(e, 'top')}>
             Back to top

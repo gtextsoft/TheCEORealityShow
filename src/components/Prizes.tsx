@@ -6,7 +6,6 @@ interface PrizeDetail {
   title: string;
   value: string;
   description: string;
-  icon: string;
   image?: string;
 }
 
@@ -15,42 +14,36 @@ const prizes: PrizeDetail[] = [
     title: 'Grand Prize',
     value: '₦100,000,000',
     description: 'Massive cash reward to kickstart your entrepreneurial journey',
-    icon: '💰',
     image: '/images/prize-1.jpg',
   },
   {
     title: 'Brand New Car',
     value: 'Premium Vehicle',
     description: 'A brand new luxury car to match your CEO status',
-    icon: '🚗',
     image: '/images/prize-2.jpg',
   },
   {
     title: 'Prime Real Estate',
     value: '1 Acre of Land',
     description: 'Prime location land in a strategic development area',
-    icon: '🏞️',
     image: '/images/prize-3.jpg',
   },
   {
     title: 'CEO Position',
     value: '1 Year as CEO',
     description: 'Lead a fast-growing subsidiary company under the Stephen Akintayo group',
-    icon: '👔',
     image: '/images/prize-4.jpg',
   },
   {
     title: 'Business Mentorship',
     value: 'Lifetime Access',
     description: 'Ongoing mentorship from Dr. Stephen Akintayo and top business leaders',
-    icon: '🎓',
     image: '/images/prize-5.jpg',
   },
   {
     title: 'Media Exposure',
     value: 'National Coverage',
     description: 'Featured on television, online media, and all official show platforms',
-    icon: '📺',
     image: '/images/prize-6.jpg',
   },
 ];
@@ -77,7 +70,6 @@ export default function Prizes() {
       <div className={prizeStyles.prizesGrid}>
         {prizes.map((prize, index) => (
           <div key={index} className={prizeStyles.prizeCard}>
-            <div className={prizeStyles.prizeIcon}>{prize.icon}</div>
             <div className={prizeStyles.prizeImage}>
               <img 
                 src={prize.image || `/images/prize-${index + 1}.jpg`} 

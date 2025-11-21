@@ -27,8 +27,8 @@ export default function Hero({ deadline, prizes }: HeroProps) {
         </div>
 
         <h1 className={styles.heroTitle}>
-          Become the Next
-          <span className={styles.highlight}> Real Estate Mogul Reality TV Show</span>
+         The Real Estate Mogul
+          <span className={styles.highlight}>Reality Show</span>
         </h1>
 
         <p className={styles.heroSubtitle}>
@@ -70,11 +70,12 @@ export default function Hero({ deadline, prizes }: HeroProps) {
       <div className={styles.heroRight}>
         <div className={styles.heroImageContainer}>
           <img
-            src="/images/hero-ceo.jpg"
-            alt="CEO Reality Show - Transform your career"
+            src="/images/drsa.jpeg"
+            alt="Dr. Stephen Akintayo - Organizer of The CEO Reality Show"
             className={styles.heroImage}
             onError={(e) => {
-              e.currentTarget.style.display = 'none';
+              // Fallback to original image if drsa.jpeg doesn't load
+              e.currentTarget.src = '/images/hero-ceo.jpg';
             }}
           />
         </div>

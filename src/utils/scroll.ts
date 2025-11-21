@@ -6,6 +6,16 @@ export function smoothScrollTo(elementId: string): void {
   }
 }
 
+/**
+ * Smoothly scroll to the top of the page
+ */
+export function scrollToTop(): void {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
+
 export function getScrollProgress(): number {
   const windowHeight = window.innerHeight;
   const documentHeight = document.documentElement.scrollHeight;

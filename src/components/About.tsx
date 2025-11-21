@@ -84,6 +84,49 @@ export default function About() {
         </p>
       </div>
 
+      {/* About Dr. Stephen Akintayo Section */}
+      <div className={styles.card} style={{ marginBottom: '2rem', padding: '2rem' }}>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.5fr)', 
+          gap: '2rem',
+          alignItems: 'center'
+        }} className={aboutStyles.organizerGrid}>
+          <div className={aboutStyles.imageContainer} style={{ height: '300px', marginBottom: 0 }}>
+            <img
+              src="/images/drsa.jpeg"
+              alt="Dr. Stephen Akintayo - Business Leader and Organizer"
+              className={aboutStyles.aboutImage}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+          </div>
+          <div>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>
+              Meet the Organizer: <span style={{ color: 'var(--primary)' }}>Dr. Stephen Akintayo</span>
+            </h3>
+            <p style={{ marginBottom: '1rem', lineHeight: '1.8' }}>
+              Dr. Stephen Akintayo is a renowned business leader, entrepreneur, and philanthropist 
+              dedicated to empowering the next generation of business leaders. Through The CEO Reality Show, 
+              he provides a unique platform for ambitious professionals to showcase their leadership 
+              capabilities and compete for life-changing opportunities.
+            </p>
+            <p style={{ marginBottom: '1rem', lineHeight: '1.8' }}>
+              As the founder of the Stephen Akintayo Foundation, Dr. Akintayo has been instrumental 
+              in providing business education, mentorship, and real-world opportunities to thousands 
+              of entrepreneurs across Nigeria and the diaspora.
+            </p>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '1rem' }}>
+              <span className={styles.pill}>Business Leader</span>
+              <span className={styles.pill}>Mentor</span>
+              <span className={styles.pill}>Philanthropist</span>
+              <span className={styles.pill}>Real Estate Mogul</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className={styles.grid2}>
         <article className={styles.card}>
           <div className={aboutStyles.imageContainer}>
