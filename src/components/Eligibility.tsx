@@ -93,7 +93,7 @@ export default function Eligibility() {
           maxWidth: '800px',
           margin: '0 auto 1.5rem'
         }}>
-          <strong>Important:</strong> To apply for The CEO Reality Show, you must have a <strong>Real Estate Course Certificate</strong>.
+          <strong>Important:</strong> To apply for KeytoDCity Reality Show, you must have a <strong>Real Estate Course Certificate</strong>.
           If you don't have one yet, you can get certified through our official program:
         </p>
         <button

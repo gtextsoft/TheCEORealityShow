@@ -49,7 +49,7 @@ export default function About() {
           margin: '0 auto 1.5rem',
           color: 'rgba(255, 255, 255, 0.95)'
         }}>
-          All applicants <strong>MUST</strong> have a <strong>Real Estate Course Certificate</strong> to be eligible for The CEO Reality Show.
+          All applicants <strong>MUST</strong> have a <strong>Real Estate Course Certificate</strong> to be eligible for KeytoDCity Reality Show.
           <br />
           Don't have one yet? No problem! Get certified through our official program below:
         </p>
@@ -107,7 +107,7 @@ export default function About() {
             </h3>
             <p style={{ marginBottom: '1rem', lineHeight: '1.8' }}>
               Dr. Stephen Akintayo is a renowned business leader, entrepreneur, and philanthropist 
-              dedicated to empowering the next generation of business leaders. Through The CEO Reality Show, 
+              dedicated to empowering the next generation of business leaders. Through KeytoDCity Reality Show, 
               he provides a unique platform for ambitious professionals to showcase their leadership 
               capabilities and compete for life-changing opportunities.
             </p>
@@ -131,16 +131,16 @@ export default function About() {
           <div className={aboutStyles.imageContainer}>
             <img
               src="/images/about-show.jpg"
-              alt="CEO Reality Show contestants in boardroom"
+              alt="KeytoDCity Reality Show contestants in boardroom"
               className={aboutStyles.aboutImage}
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}
             />
           </div>
-          <h3>What is "The CEO Reality Show with Dr. Stephen Akintayo"?</h3>
+          <h3>What is "KeytoDCity Reality Show with Dr. Stephen Akintayo"?</h3>
           <p>
-            The CEO Reality Show is a business and leadership television experience where
+            KeytoDCity Reality Show is a business and leadership television experience where
             selected contestants live, learn and compete in a structured environment that
             mirrors the real world of entrepreneurship.
           </p>

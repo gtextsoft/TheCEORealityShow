@@ -33,7 +33,7 @@ export default function Hero({ deadline, prizes }: HeroProps) {
 
         <p className={styles.heroSubtitle}>
           <strong>Step into the boardroom, not the background.</strong>
-          Join <strong>The CEO Reality Show with Dr. Stephen Akintayo</strong> and compete for
+          Join <strong>KeytoDCity Reality Show with Dr. Stephen Akintayo</strong> and compete for
           a chance to win
           <strong> ₦100,000,000 cash, a brand new car, 1 acre of land</strong>, and
           <strong> 1 year as CEO</strong> of one of his company's fast-growing subsidiaries.

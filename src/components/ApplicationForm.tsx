@@ -154,10 +154,10 @@ export default function ApplicationForm() {
         className={`${styles.formCard} ${isSubmitting ? styles.formLoading : ''}`}
         onSubmit={handleSubmit(onSubmit)}
         noValidate
-        aria-label="Application form for The CEO Reality Show"
+        aria-label="Application form for KeytoDCity Reality Show"
       >
         <div className={styles.formHeader}>
-          <h3>Apply Now to Join The CEO Reality Show</h3>
+          <h3>Apply Now to Join KeytoDCity Reality Show</h3>
           <p>
             Fill out the form below carefully. Share clearly who you are, what you've done
             and why you should be considered for this once-in-a-lifetime opportunity.
@@ -341,7 +341,7 @@ export default function ApplicationForm() {
 
         <div className={styles.formGroup}>
           <label htmlFor="whyYou">
-            Why should you be selected for The CEO Reality Show?
+            Why should you be selected for KeytoDCity Reality Show?
             <span className={styles.requiredStar} aria-label="required">*</span>
           </label>
           <textarea
@@ -384,7 +384,7 @@ export default function ApplicationForm() {
 
         <div className={styles.formGroup}>
           <label htmlFor="referral">
-            How did you hear about The CEO Reality Show?
+            How did you hear about KeytoDCity Reality Show?
             <span className={styles.requiredStar} aria-label="required">*</span>
           </label>
           <select

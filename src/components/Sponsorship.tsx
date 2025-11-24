@@ -72,7 +72,7 @@ const contributionOptions = [
  */
 export default function Sponsorship() {
   const handleContactClick = () => {
-    window.location.href = 'mailto:sponsorships@stephenakintayo.com?subject=Sponsorship Inquiry - CEO Reality Show';
+    window.location.href = 'mailto:sponsorships@stephenakintayo.com?subject=Sponsorship Inquiry - KeytoDCity Reality Show';
   };
 
   return (

@@ -1,4 +1,4 @@
-# Image Assets for CEO Reality Show Website
+# Image Assets for KeytoDCity Reality Show Website
 
 Place your images in this `public/images/` directory. The website expects the following images:
 
@@ -10,7 +10,7 @@ Place your images in this `public/images/` directory. The website expects the fo
 
 2. **about-show.jpg** (Recommended: 800x500px)
    - Image showing contestants in boardroom or business setting
-   - Used in: About section - "What is the CEO Reality Show" card
+   - Used in: About section - "What is the KeytoDCity Reality Show" card
 
 3. **how-it-works.jpg** (Recommended: 800x500px)
    - Image showing the process or steps of the show

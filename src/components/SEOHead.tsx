@@ -11,8 +11,8 @@ interface SEOHeadProps {
  * Component to manage SEO meta tags dynamically
  */
 export default function SEOHead({
-  title = 'The CEO Reality Show with Dr. Stephen Akintayo',
-  description = 'Apply for The CEO Reality Show with Dr. Stephen Akintayo and stand a chance to win ₦100,000,000, 1 acre of land, and 1 year as CEO of a top subsidiary.',
+  title = 'KeytoDCity Reality Show with Dr. Stephen Akintayo',
+  description = 'Apply for KeytoDCity Reality Show with Dr. Stephen Akintayo and stand a chance to win ₦100,000,000, 1 acre of land, and 1 year as CEO of a top subsidiary.',
   ogImage = '/og-image.jpg',
   ogUrl = typeof window !== 'undefined' ? window.location.href : '',
 }: SEOHeadProps) {

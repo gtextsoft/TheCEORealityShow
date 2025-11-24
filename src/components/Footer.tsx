@@ -27,7 +27,7 @@ export default function Footer() {
             }}
           />
           <p>
-            © {currentYear} The CEO Reality Show with Dr. Stephen Akintayo. All rights reserved.
+            © {currentYear} KeytoDCity Reality Show with Dr. Stephen Akintayo. All rights reserved.
           </p>
         </div>
         <div className={styles.footerLinks}>

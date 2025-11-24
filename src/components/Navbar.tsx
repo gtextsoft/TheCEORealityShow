@@ -67,7 +67,7 @@ export default function Navbar() {
           <div className={styles.brandIcon} aria-hidden="true" style={{ display: 'none' }}>SA</div>
           <div className={styles.brandText}>
             <span>Dr. Stephen Akintayo</span>
-            <span>The CEO Reality Show</span>
+            <span>KeytoDCity Reality Show</span>
           </div>
         </a>
 
