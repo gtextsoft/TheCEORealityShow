@@ -27,8 +27,7 @@ export default function Hero({ deadline, prizes }: HeroProps) {
         </div>
 
         <h1 className={styles.heroTitle}>
-         The Real Estate Mogul
-          <span className={styles.highlight}>Reality Show</span>
+        KeytoDCity Reality Show nah
         </h1>
 
         <p className={styles.heroSubtitle}>
