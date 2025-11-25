@@ -33,8 +33,8 @@ export default function Hero({ deadline, prizes }: HeroProps) {
 
         <p className={styles.heroSubtitle}>
           <strong>Step into the boardroom, not the background.</strong>
-          Join <strong>KeytoDCity Reality Show with Dr. Stephen Akintayo</strong> and compete for
-          a chance to win
+          Join the <strong> KeytoDCity Reality Show with Dr. Stephen Akintayo</strong> and compete for
+          a chance to win the following prizes:
           <strong> ₦100,000,000 cash, a brand new car, 1 acre of land</strong>, and
           <strong> 1 year as CEO</strong> of one of his company's fast-growing subsidiaries.
         </p>
@@ -81,14 +81,10 @@ export default function Hero({ deadline, prizes }: HeroProps) {
               Are you ready to sit in the CEO chair?
             </p>
             <p className={styles.heroMainSubtext}>
-              Only a select group of ambitious entrepreneurs and professionals will make it into
-              the house. Prove your intelligence, resilience, creativity and leadership under
-              pressure.
+      Only a selected group of ambitious entrepreneurs and professionals will make it into the show. Prove your intelligence, resilience, creativity and leadership under pressure.
             </p>
           </div>
-
           <CountdownTimer deadline={deadline} />
-
           <button
             className={styles.btnPrimary}
             onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGTdoSAiEbuWCMTinTVbDDJt23hKXwE-RAaasDFjkAj58MXQ/viewform?usp=publish-editor', '_blank')}
