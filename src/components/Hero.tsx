@@ -32,7 +32,7 @@ export default function Hero({ deadline, prizes }: HeroProps) {
         </h1>
 
         <p className={styles.heroSubtitle}>
-          <strong>Step into the boardroom, not the background.</strong>
+          <strong>Step into the boardroom, not the background. </strong>
           Join the <strong> KeytoDCity Reality Show with Dr. Stephen Akintayo</strong> and compete for
           a chance to win the following prizes:
           <strong> ₦100,000,000 cash, a brand new car, 1 acre of land</strong>, and
