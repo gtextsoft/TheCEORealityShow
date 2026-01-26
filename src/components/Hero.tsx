@@ -15,101 +15,11 @@ interface HeroProps {
 export default function Hero({ deadline, prizes }: HeroProps) {
 
   return (
+    <div>
     <section className={styles.hero}>
-      <div className={styles.heroLeft}>
-        <div className={styles.heroBadge}>
-          <span className={styles.heroBadgeDot} aria-hidden="true"></span>
-          Season 1 • 2026
-          <span>Applications Now Open</span>
-        </div>
-
-        <h1 className={styles.heroTitle}>
-        KeytoDCity CEO Challenge
-          <span className={styles.highlight}> Reality Show</span>
-        </h1>
-
-        <p className={styles.heroSubtitle}>
-          <strong>Step into the boardroom, not the background. </strong>
-          Join the <strong> KeytoDCity Reality Show</strong> and compete for
-          a chance to win the following prizes:
-          <strong> ₦100,000,000 cash, a brand new car, 1 acre of land</strong>, and
-          <strong> 1 year as CEO</strong> of one of his company's fast-growing subsidiaries.
-        </p>
-
-        <div className={styles.heroPrizes}>
-          {prizes.map((prize, index) => (
-            <div key={index} className={styles.prizeCard}>
-              <div className={styles.prizeLabel}>{prize.label}</div>
-              <div className={styles.prizeValue}>
-                {prize.value} <span>{prize.subtitle}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.heroCtaGroup}>
-          <Link to="/apply" className={styles.btnPrimary} aria-label="Apply to join the show">
-            Apply to Join the Show
-            <span aria-hidden="true">⚡</span>
-          </Link>
-          <Link to="/about#how-it-works" className={styles.btnOutline} aria-label="Learn how the reality show works">
-            How the Reality Show Works
-          </Link>
-        </div>
-
-        <div className={styles.heroMeta}>
-          <span>🎬 Filming: <strong>2026</strong> (Exact dates to be announced)</span>
-          <span>🌍 Open to applicants across <strong>Nigeria & the diaspora</strong></span>
-          <span>📺 Business, strategy, sales, leadership & impact</span>
-        </div>
-
-        {/* Social Media Links - Similar to DStv */}
-        <div className={styles.heroSocial}>
-          <h3 className={styles.heroSocialTitle}>Follow Us</h3>
-          <div className={styles.heroSocialLinks}>
-            <a 
-              href="https://facebook.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Follow us on Facebook"
-              className={styles.heroSocialLink}
-            >
-              <FacebookIcon className={styles.socialIcon} />
-              <span>Facebook</span>
-            </a>
-            <a 
-              href="https://instagram.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Follow us on Instagram"
-              className={styles.heroSocialLink}
-            >
-              <InstagramIcon className={styles.socialIcon} />
-              <span>Instagram</span>
-            </a>
-            <a 
-              href="https://youtube.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Follow us on YouTube"
-              className={styles.heroSocialLink}
-            >
-              <YouTubeIcon className={styles.socialIcon} />
-              <span>YouTube</span>
-            </a>
-            <a 
-              href="https://twitter.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Follow us on Twitter"
-              className={styles.heroSocialLink}
-            >
-              <TwitterIcon className={styles.socialIcon} />
-              <span>Twitter</span>
-            </a>
-          </div>
-        </div>
-      </div>
+    <div className={styles.heroLeft}>
+      <img src="/images/logo.png" alt="Hero Image" className={styles.heroImage} />
+    </div>
 
       <div className={styles.heroRight}>
         <div className={styles.heroCard}>
@@ -167,6 +77,104 @@ export default function Hero({ deadline, prizes }: HeroProps) {
         </div>
       </div>
     </section>
+
+    <div className={styles.heroMid}>
+        <div className={styles.heroBadge}>
+          <span className={styles.heroBadgeDot} aria-hidden="true"></span>
+          Season 1 • 2026
+          <span>Applications Now Open</span>
+        </div>
+
+        <h1 className={styles.heroTitle}>
+        KeystoDCity Real Estate
+          <span className={styles.highlight}> Reality Show</span>
+        </h1>
+
+        <p className={styles.heroSubtitle}>
+          <strong>Step into the boardroom, not the background. </strong>
+          Join the <strong> KeystoDCity Reality Show</strong> and compete for
+          a chance to win the following prizes:
+          <strong> ₦100,000,000 cash, a brand new car, 1 acre of land</strong>, and
+          <strong> 1 year as CEO</strong> of one of his company's fast-growing subsidiaries.
+        </p>
+
+        <div className={styles.heroPrizes}>
+          {prizes.map((prize, index) => (
+            <div key={index} className={styles.prizeCard}>
+              <div className={styles.prizeLabel}>{prize.label}</div>
+              <div className={styles.prizeValue}>
+                {prize.value} <span>{prize.subtitle}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className={styles.heroCtaGroup}>
+          <Link to="/apply" className={styles.btnPrimary} aria-label="Apply to join the show">
+            Apply to Join the Show
+            <span aria-hidden="true">⚡</span>
+          </Link>
+          <Link to="/about#how-it-works" className={styles.btnOutline} aria-label="Learn how the reality show works">
+            How the Reality Show Works
+          </Link>
+        </div>
+
+        <div className={styles.heroMeta}>
+          <span>🎬 Filming: <strong>2026</strong> (Exact dates to be announced)</span>
+          <span>🌍 Open to applicants across <strong>Nigeria & the diaspora</strong></span>
+          <span>📺 Real Estate, strategy, sales, leadership & impact</span>
+        </div>
+
+        {/* Social Media Links - Similar to DStv */}
+        <div className={styles.heroSocial}>
+          <h3 className={styles.heroSocialTitle}>Follow Us</h3>
+          <div className={styles.heroSocialLinks}>
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on Facebook"
+              className={styles.heroSocialLink}
+            >
+              <FacebookIcon className={styles.socialIcon} />
+              <span>Facebook</span>
+            </a>
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
+              className={styles.heroSocialLink}
+            >
+              <InstagramIcon className={styles.socialIcon} />
+              <span>Instagram</span>
+            </a>
+            <a 
+              href="https://youtube.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on YouTube"
+              className={styles.heroSocialLink}
+            >
+              <YouTubeIcon className={styles.socialIcon} />
+              <span>YouTube</span>
+            </a>
+            <a 
+              href="https://twitter.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on Twitter"
+              className={styles.heroSocialLink}
+            >
+              <TwitterIcon className={styles.socialIcon} />
+              <span>Twitter</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
   );
 }
 

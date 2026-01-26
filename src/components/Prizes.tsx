@@ -35,9 +35,9 @@ const prizes: PrizeDetail[] = [
     image: '/images/prize-4.jpg',
   },
   {
-    title: 'Business Mentorship',
+    title: 'Real Estate Mentorship',
     value: 'Lifetime Access',
-    description: 'Ongoing mentorship from top business leaders',
+    description: 'Ongoing mentorship from top Real Estate leaders',
     image: '/images/prize-5.jpg',
   },
   {

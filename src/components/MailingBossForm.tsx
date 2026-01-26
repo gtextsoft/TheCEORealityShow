@@ -173,12 +173,12 @@ export default function MailingBossForm() {
         className={`${styles.formCard} ${isSubmitting ? styles.formLoading : ''}`}
         onSubmit={handleSubmit(onSubmit)}
         noValidate
-        aria-label="Application form for KeytoDCity Reality Show"
+        aria-label="Application form for KeystoDCity Reality Show"
       >
         <div className={styles.formHeader}>
-          <h3>Apply Now to Join KeytoDCity Reality Show</h3>
+          <h3>Apply Now to Join KeystoDCity Reality Show</h3>
           <p>
-            Fill out the form below to apply for KeytoDCity Reality Show.
+            Fill out the form below to apply for KeystoDCity Reality Show.
             All fields marked with an asterisk (*) are required.
           </p>
         </div>

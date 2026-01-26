@@ -16,7 +16,7 @@ export default function ApplicationPage() {
           </h2>
         </div>
         <p className={styles.sectionSubtitle}>
-          Complete the form below to apply for the KeytoDCity Reality Show. Make sure you have your 
+          Complete the form below to apply for the KeystoDCity Reality Show. Make sure you have your 
           Real Estate Course Certificate ready before submitting.
         </p>
       </div>

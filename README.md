@@ -1,6 +1,6 @@
-# KeytoDCity Reality Show - Website
+# KeystoDCity Reality Show - Website
 
-A modern, accessible React + TypeScript application for KeytoDCity Reality Show with Dr. Stephen Akintayo.
+A modern, accessible React + TypeScript application for KeystoDCity Reality Show.
 
 ## Features
 
@@ -127,5 +127,5 @@ Currently, form submissions are stored in localStorage. To connect to a backend 
 
 ## License
 
-© 2024 KeytoDCity Reality Show with Dr. Stephen Akintayo. All rights reserved.
+© 2024 KeystoDCity Reality Show. All rights reserved.
 

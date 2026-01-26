@@ -56,13 +56,13 @@ const sponsorshipTiers: SponsorshipTier[] = [
 ];
 
 const contributionOptions = [
-  {
-    title: 'Individual Contribution',
-    description: 'Support the show and help discover Africa\'s next CEO',
-  },
+  // {
+  //   title: 'Individual Contribution',
+  //   description: 'Support the show and help discover Africa\'s next CEO',
+  // },
   {
     title: 'Corporate Partnership',
-    description: 'Partner with us to create Africa\'s most impactful business reality show',
+    description: 'Partner with us to create Africa\'s most impactful Real Estate reality show',
   },
 ];
 
@@ -71,7 +71,7 @@ const contributionOptions = [
  */
 export default function SponsorshipPage() {
   const handleContactClick = () => {
-    window.location.href = 'mailto:sponsorships@stephenakintayo.com?subject=Sponsorship Inquiry - KeytoDCity Reality Show';
+    window.location.href = 'mailto:sponsorships@saproductiontv.com?subject=Sponsorship Inquiry - KeystoDCity Reality Show';
   };
 
   return (
@@ -84,7 +84,7 @@ export default function SponsorshipPage() {
           </h2>
         </div>
         <p className={styles.sectionSubtitle}>
-          Join us in creating Africa's most impactful business reality show. Partner with KeytoDCity 
+          Join us in creating Africa's most impactful Real Estate reality show. Partner with KeystoDCity 
           and reach millions of ambitious entrepreneurs across the continent.
         </p>
       </div>
@@ -124,7 +124,7 @@ export default function SponsorshipPage() {
           Contact Us About Sponsorship
         </button>
         <p style={{ marginTop: '1rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-          Email us at sponsorships@stephenakintayo.com for detailed partnership packages
+          Email us at sponsorships@saproductiontv.com for detailed partnership packages
         </p>
       </div>
     </AnimatedSection>

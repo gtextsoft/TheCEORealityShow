@@ -8,7 +8,7 @@ const eligibilityCriteria = [
   'Must be at least 21 years old at the time of application.',
   'Open to Nigerians and Africans in the diaspora (valid travel documents may be required if selected).',
   'Must be able to commit to the full duration of filming if selected as a housemate.',
-  'Must have demonstrable passion for business, leadership, innovation or social impact.',
+  'Must have demonstrable passion for Real Estate, leadership, innovation or social impact.',
   'Must be willing to appear on television, online media and all official show platforms.',
   "Must agree to the show's official terms & conditions, code of conduct and media release forms.",
 ];
@@ -27,7 +27,7 @@ const faqItems = [
   {
     question: 'Where will the show be filmed?',
     answer:
-      'The show will be filmed in a secure, fully equipped location that reflects the standards of a modern business environment. Exact location and dates will be shared privately with selected contestants.',
+      'The show will be filmed in a secure, fully equipped location that reflects the standards of a modern Real Estate environment. Exact location and dates will be shared privately with selected contestants.',
   },
   {
     question: "How will I know if I've been shortlisted?",
@@ -93,7 +93,7 @@ export default function Eligibility() {
           maxWidth: '800px',
           margin: '0 auto 1.5rem'
         }}>
-          <strong>Important:</strong> To apply for KeytoDCity Reality Show, you must have a <strong>Real Estate Course Certificate</strong>.
+          <strong>Important:</strong> To apply for KeystoDCity Reality Show, you must have a <strong>Real Estate Course Certificate</strong>.
           If you don't have one yet, you can get certified through our official program:
         </p>
         <button

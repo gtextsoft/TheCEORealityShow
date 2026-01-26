@@ -14,7 +14,25 @@
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+.brandLogoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
 
+.brandLogo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
 @media (max-width: 860px) {
   .footerInner {
     grid-template-columns: 1fr;

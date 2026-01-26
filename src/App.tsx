@@ -44,8 +44,8 @@ function App() {
           path="/" 
           element={
             <Layout 
-              title="KeytoDCity Reality Show"
-              description="Apply for KeytoDCity Reality Show and stand a chance to win ₦100,000,000, 1 acre of land, and 1 year as CEO of a top subsidiary."
+              title="KeystoDCity Reality Show"
+              description="Apply for KeystoDCity Reality Show and stand a chance to win ₦100,000,000, 1 acre of land, and 1 year as CEO of a top subsidiary."
             >
               <HomePage />
             </Layout>
@@ -55,8 +55,8 @@ function App() {
           path="/about" 
           element={
             <Layout 
-              title="About the Show | KeytoDCity Reality Show"
-              description="Learn about the KeytoDCity Reality Show and how it works."
+              title="About the Show | KeystoDCity Reality Show"
+              description="Learn about the KeystoDCity Reality Show and how it works."
             >
               <AboutPage />
             </Layout>
@@ -66,7 +66,7 @@ function App() {
           path="/prizes" 
           element={
             <Layout 
-              title="Prizes & Rewards | KeytoDCity Reality Show"
+              title="Prizes & Rewards | KeystoDCity Reality Show"
               description="Win life-changing rewards worth over ₦150,000,000 including cash, car, land, and CEO position."
             >
               <PrizesPage />
@@ -77,8 +77,8 @@ function App() {
           path="/eligibility" 
           element={
             <Layout 
-              title="Eligibility & Requirements | KeytoDCity Reality Show"
-              description="Find out who can apply and what you need to join the KeytoDCity Reality Show."
+              title="Eligibility & Requirements | KeystoDCity Reality Show"
+              description="Find out who can apply and what you need to join the KeystoDCity Reality Show."
             >
               <EligibilityPage />
             </Layout>
@@ -88,8 +88,8 @@ function App() {
           path="/sponsorship" 
           element={
             <Layout 
-              title="Sponsorship & Partnership | KeytoDCity Reality Show"
-              description="Partner with us to create Africa's most impactful business reality show."
+              title="Sponsorship & Partnership | KeystoDCity Reality Show"
+              description="Partner with us to create Africa's most impactful Real Estate reality show."
             >
               <SponsorshipPage />
             </Layout>
@@ -99,8 +99,8 @@ function App() {
           path="/faq" 
           element={
             <Layout 
-              title="FAQ | KeytoDCity Reality Show"
-              description="Frequently asked questions about the KeytoDCity Reality Show application process and requirements."
+              title="FAQ | KeystoDCity Reality Show"
+              description="Frequently asked questions about the KeystoDCity Reality Show application process and requirements."
             >
               <FAQPage />
             </Layout>
@@ -110,8 +110,8 @@ function App() {
           path="/apply" 
           element={
             <Layout 
-              title="Apply Now | KeytoDCity Reality Show"
-              description="Apply for the KeytoDCity Reality Show. Complete the application form to get started."
+              title="Apply Now | KeystoDCity Reality Show"
+              description="Apply for the KeystoDCity Reality Show. Complete the application form to get started."
             >
               <ApplicationPage />
             </Layout>

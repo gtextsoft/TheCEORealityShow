@@ -1,16 +1,16 @@
-# Image Assets for KeytoDCity Reality Show Website
+# Image Assets for KeystoDCity Reality Show Website
 
 Place your images in this `public/images/` directory. The website expects the following images:
 
 ## Required Images
 
 1. **hero-ceo.jpg** (Recommended: 1200x600px)
-   - Hero section image showing CEO/business theme
+   - Hero section image showing CEO/Real Estate theme
    - Used in: Hero section right side
 
 2. **about-show.jpg** (Recommended: 800x500px)
-   - Image showing contestants in boardroom or business setting
-   - Used in: About section - "What is the KeytoDCity Reality Show" card
+   - Image showing contestants in boardroom or Real Estate setting
+   - Used in: About section - "What is the KeystoDCity Reality Show" card
 
 3. **how-it-works.jpg** (Recommended: 800x500px)
    - Image showing the process or steps of the show
@@ -22,7 +22,7 @@ Place your images in this `public/images/` directory. The website expects the fo
      - prize-2.jpg - Brand New Car
      - prize-3.jpg - Prime Real Estate
      - prize-4.jpg - CEO Position
-     - prize-5.jpg - Business Mentorship
+     - prize-5.jpg - Real Estate Mentorship
      - prize-6.jpg - Media Exposure
 
 ## Image Guidelines
@@ -36,7 +36,6 @@ Place your images in this `public/images/` directory. The website expects the fo
 
 You can also add:
 - Sponsor logos
-- Dr. Stephen Akintayo photos
 - Contestant photos
 - Behind-the-scenes images
 

@@ -42,22 +42,25 @@ export default function Navbar() {
     <header className={`${styles.nav} ${isOpen ? styles.navOpen : ''}`} role="banner">
       <div className={styles.navInner}>
         <Link to="/" className={styles.brand} aria-label="Go to home">
-          <img 
-            src="/images/logo.jpeg" 
-            alt="KeytoDCity Reality Show Logo" 
-            className={styles.brandLogo}
-            onError={(e) => {
-              // Fallback to text icon if image fails to load
-              e.currentTarget.style.display = 'none';
-              const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-              if (fallback) fallback.style.display = 'flex';
-            }}
-          />
-          <div className={styles.brandIcon} aria-hidden="true" style={{ display: 'none' }}>SA</div>
-          <div className={styles.brandText}>
-            <span>KeytoDCity</span>
-            <span>Reality Show</span>
+          <div className={styles.brandLogoContainer}>
+            <img 
+              src="/images/half-logo2.png" 
+              alt="KeystoDCity Reality Show Logo" 
+              className={styles.brandLogo}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+            <img 
+              src="/images/half-logo.png" 
+              alt="KeystoDCity Reality Show Logo" 
+              className={styles.brandLogo}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
           </div>
+          <div className={styles.brandIcon} aria-hidden="true" style={{ display: 'none' }}>SA</div>
         </Link>
 
         <button

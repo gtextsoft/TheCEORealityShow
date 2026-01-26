@@ -2,6 +2,8 @@ import { smoothScrollTo } from '../utils/scroll';
 import { FacebookIcon, InstagramIcon, YouTubeIcon, TwitterIcon } from './SocialIcons';
 import styles from '../styles/components/footer.module.css';
 
+import { Link } from 'react-router-dom';
+
 /**
  * Footer component with copyright and links
  */
@@ -19,16 +21,36 @@ export default function Footer() {
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.footerInner}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          <img 
+          {/* <img 
             src="/images/logo.jpeg" 
-            alt="KeytoDCity Reality Show Logo" 
+            alt="KeystoDCity Reality Show Logo" 
             className={styles.footerLogo}
             onError={(e) => {
               e.currentTarget.style.display = 'none';
             }}
-          />
+          /> */}
+           <Link to="/" className={styles.brand} aria-label="Go to home">
+          <div className={styles.brandLogoContainer}>
+            <img 
+              src="/images/half-logo2.png" 
+              alt="KeystoDCity Reality Show Logo" 
+              className={styles.brandLogo}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+            <img 
+              src="/images/half-logo.png" 
+              alt="KeystoDCity Reality Show Logo" 
+              className={styles.brandLogo}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+          </div>
+     </Link>
           <p>
-            © {currentYear} KeytoDCity Reality Show. All rights reserved.
+            © {currentYear} KeystoDCity Reality Show. All rights reserved.
           </p>
         </div>
         <div className={styles.footerSocial}>

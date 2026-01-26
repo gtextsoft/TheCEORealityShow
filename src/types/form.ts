@@ -8,15 +8,17 @@ export type ReferralSource =
   | 'other';
 
 export interface ApplicationFormData {
-  fullName: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: string;
-  country: string;
+  state: string;
   age: number;
   occupation: string;
   experience: string;
   whyYou: string;
-  socials?: string;
+  socials: string;
+  video: FileList;
   referral: ReferralSource;
   consent: boolean;
 }

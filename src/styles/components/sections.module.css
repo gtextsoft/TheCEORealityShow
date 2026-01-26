@@ -44,14 +44,14 @@
 }
 
 .grid2 {
-  display: grid;
+  /* display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 1.75rem;
+  gap: 1.75rem; */
 }
 
 @media (max-width: 900px) {
   .grid2 {
-    grid-template-columns: minmax(0, 1fr);
+    /* grid-template-columns: minmax(0, 1fr); */
   }
 }
 

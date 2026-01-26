@@ -63,7 +63,7 @@ const contributionOptions = [
   },
   {
     title: 'Corporate Partnership',
-    description: 'Partner with us to create Africa\'s most impactful business reality show',
+    description: 'Partner with us to create Africa\'s most impactful Real Estate reality show',
   },
 ];
 
@@ -72,7 +72,7 @@ const contributionOptions = [
  */
 export default function Sponsorship() {
   const handleContactClick = () => {
-    window.location.href = 'mailto:sponsorships@stephenakintayo.com?subject=Sponsorship Inquiry - KeytoDCity Reality Show';
+    window.location.href = 'mailto:sponsorships@stephenakintayo.com?subject=Sponsorship Inquiry - KeystoDCity Reality Show';
   };
 
   return (
@@ -85,7 +85,7 @@ export default function Sponsorship() {
           </h2>
         </div>
         <p className={styles.sectionSubtitle}>
-          Join us in creating Africa's most impactful business reality show. 
+          Join us in creating Africa's most impactful Real Estate reality show. 
           Partner with us and gain massive brand exposure while supporting the next generation of African leaders.
         </p>
       </div>
@@ -135,7 +135,7 @@ export default function Sponsorship() {
           <div className={sponsorStyles.donationIcon}>💝</div>
           <h3 className={sponsorStyles.donationTitle}>Support the Show</h3>
           <p className={sponsorStyles.donationDescription}>
-            Your donation helps us create Africa's most impactful business reality show and discover the next generation of leaders.
+            Your donation helps us create Africa's most impactful Real Estate reality show and discover the next generation of leaders.
             Every contribution makes a difference!
           </p>
           <button 

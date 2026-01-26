@@ -11,8 +11,8 @@ interface SEOHeadProps {
  * Component to manage SEO meta tags dynamically
  */
 export default function SEOHead({
-  title = 'KeytoDCity Reality Show',
-  description = 'Apply for KeytoDCity Reality Show and stand a chance to win ₦100,000,000, 1 acre of land, and 1 year as CEO of a top subsidiary.',
+  title = 'KeystoDCity Reality Show',
+  description = 'Apply for KeystoDCity Reality Show and stand a chance to win ₦100,000,000, 1 acre of land, and 1 year as CEO of a top subsidiary.',
   ogImage = '/og-image.jpg',
   ogUrl = typeof window !== 'undefined' ? window.location.href : '',
 }: SEOHeadProps) {
@@ -56,7 +56,7 @@ export default function SEOHead({
 
     // Additional SEO tags
     updateMetaTag('theme-color', '#0f766e');
-    updateMetaTag('author', 'KeytoDCity Reality Show');
+    updateMetaTag('author', 'KeystoDCity Reality Show');
   }, [title, description, ogImage, ogUrl]);
 
   return null;

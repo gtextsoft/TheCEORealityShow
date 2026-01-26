@@ -9,17 +9,39 @@ import type { ApplicationFormData, ReferralSource } from '../types';
 import styles from '../styles/components/form.module.css';
 import heroStyles from '../styles/components/hero.module.css';
 
+// Nigerian states list
+const nigerianStates = [
+  'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa', 'Benue', 'Borno',
+  'Cross River', 'Delta', 'Ebonyi', 'Edo', 'Ekiti', 'Enugu', 'FCT', 'Gombe',
+  'Imo', 'Jigawa', 'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Kogi', 'Kwara',
+  'Lagos', 'Nasarawa', 'Niger', 'Ogun', 'Ondo', 'Osun', 'Oyo', 'Plateau',
+  'Rivers', 'Sokoto', 'Taraba', 'Yobe', 'Zamfara'
+];
+
 // Zod schema for form validation
 const formSchema = z.object({
-  fullName: z.string().min(2, 'Please enter your full name.'),
+  firstName: z.string().min(2, 'Please enter your first name.'),
+  lastName: z.string().min(2, 'Please enter your last name.'),
   email: z.string().email('Please enter a valid email address.').refine(validateEmail, 'Please enter a valid email address.'),
   phone: z.string().min(10, 'Please enter a valid phone number.').refine(validatePhone, 'Please enter a valid phone number.'),
-  country: z.string().min(2, 'Please enter your country of residence.'),
+  state: z.string().min(1, 'Please select your state in Nigeria.'),
   age: z.number().min(21, 'You must be at least 21 years old to apply.').max(70, 'Age must be 70 or less.'),
   occupation: z.string().min(2, 'Please tell us your current occupation.'),
   experience: z.string().min(20, 'Please share at least a few lines about your experience.'),
   whyYou: z.string().min(20, 'This field is required.'),
-  socials: z.string().optional().refine((val) => !val || validateURL(val), 'Please enter a valid URL.'),
+  socials: z.string().min(1, 'Social media link is required.').refine(validateURL, 'Please enter a valid URL.'),
+  video: z.instanceof(FileList)
+    .refine((files) => files.length > 0, 'Please upload a video.')
+    .refine((files) => {
+      if (files.length === 0) return false;
+      const file = files[0];
+      return file.type.startsWith('video/');
+    }, 'Please upload a valid video file.')
+    .refine((files) => {
+      if (files.length === 0) return false;
+      const file = files[0];
+      return file.size <= 100 * 1024 * 1024; // 100MB max
+    }, 'Video file size must be less than 100MB.'),
   referral: z.enum(['social', 'email', 'tv', 'friend', 'event', 'other'], {
     required_error: 'Please select an option.',
   }),
@@ -40,6 +62,8 @@ export default function ApplicationForm() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
+  const [videoDuration, setVideoDuration] = useState<number | null>(null);
+  const [videoError, setVideoError] = useState<string | null>(null);
 
   const {
     register,
@@ -62,15 +86,14 @@ export default function ApplicationForm() {
     if (!isDirty) return;
 
     const timer = setTimeout(() => {
-      const dataToSave: Partial<ApplicationFormData> = {
-        fullName: formValues.fullName,
+      const dataToSave: Record<string, unknown> = {
+        firstName: formValues.firstName,
+        lastName: formValues.lastName,
         email: formValues.email,
         phone: formValues.phone,
-        country: formValues.country,
+        state: formValues.state,
         age: formValues.age,
         occupation: formValues.occupation,
-        experience: formValues.experience,
-        whyYou: formValues.whyYou,
         socials: formValues.socials,
         referral: formValues.referral as ReferralSource,
       };
@@ -80,6 +103,33 @@ export default function ApplicationForm() {
 
     return () => clearTimeout(timer);
   }, [formValues, isDirty, setSavedDraft]);
+
+  // Handle video duration check
+  const handleVideoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) {
+      setVideoDuration(null);
+      setVideoError(null);
+      return;
+    }
+
+    const video = document.createElement('video');
+    video.preload = 'metadata';
+
+    video.onloadedmetadata = () => {
+      window.URL.revokeObjectURL(video.src);
+      const duration = video.duration;
+      setVideoDuration(duration);
+
+      if (duration > 60) {
+        setVideoError(`Video is ${Math.round(duration)} seconds. It must be exactly 1 minute (60 seconds).`);
+      } else {
+        setVideoError(null);
+      }
+    };
+
+    video.src = URL.createObjectURL(file);
+  };
 
   // Load draft on mount
   useEffect(() => {
@@ -98,21 +148,47 @@ export default function ApplicationForm() {
     setShowError(false);
     setShowSuccess(false);
 
+    // Check video duration before submission
+    if (data.video && data.video.length > 0) {
+      const file = data.video[0];
+      const video = document.createElement('video');
+      video.preload = 'metadata';
+      
+      await new Promise<void>((resolve, reject) => {
+        video.onloadedmetadata = () => {
+          window.URL.revokeObjectURL(video.src);
+          const duration = video.duration;
+          if (duration > 60) {
+            setVideoError(`Video is ${Math.round(duration)} seconds. It must be exactly 1 minute (60 seconds).`);
+            setIsSubmitting(false);
+            reject(new Error('Video duration exceeds 1 minute'));
+            return;
+          }
+          resolve();
+        };
+        video.onerror = () => {
+          setIsSubmitting(false);
+          reject(new Error('Failed to load video metadata'));
+        };
+        video.src = URL.createObjectURL(file);
+      });
+    }
+
     try {
       // Send email using mailto link (opens email client)
       const email = 'info@saproductiontv.com';
-      const subject = encodeURIComponent('KeytoDCity Reality Show Application');
+      const subject = encodeURIComponent('KeystoDCity Reality Show Application');
       const body = encodeURIComponent(
         `New Application Submission\n\n` +
-        `Full Name: ${data.fullName}\n` +
+        `First Name: ${data.firstName}\n` +
+        `Last Name: ${data.lastName}\n` +
         `Email: ${data.email}\n` +
         `Phone: ${data.phone}\n` +
-        `Country: ${data.country}\n` +
+        `State: ${data.state}\n` +
         `Age: ${data.age}\n` +
         `Occupation: ${data.occupation}\n` +
-        `Experience: ${data.experience}\n` +
-        `Why You: ${data.whyYou}\n` +
-        `Social Media: ${data.socials || 'N/A'}\n` +
+        `Social Media: ${data.socials}\n` +
+        `Video Uploaded: Yes\n` +
         `Referral Source: ${data.referral}\n` +
         `Submitted At: ${new Date().toISOString()}`
       );
@@ -175,10 +251,10 @@ export default function ApplicationForm() {
         className={`${styles.formCard} ${isSubmitting ? styles.formLoading : ''}`}
         onSubmit={handleSubmit(onSubmit)}
         noValidate
-        aria-label="Application form for KeytoDCity Reality Show"
+        aria-label="Application form for KeystoDCity Reality Show"
       >
         <div className={styles.formHeader}>
-          <h3>Apply Now to Join KeytoDCity Reality Show</h3>
+          <h3>Apply Now to Join KeystoDCity Reality Show</h3>
           <p>
             Fill out the form below carefully. Share clearly who you are, what you've done
             and why you should be considered for this once-in-a-lifetime opportunity.
@@ -212,22 +288,43 @@ export default function ApplicationForm() {
 
         <div className={styles.formGrid}>
           <div className={styles.formGroup}>
-            <label htmlFor="fullName">
-              Full Name
+            <label htmlFor="firstName">
+              First Name
               <span className={styles.requiredStar} aria-label="required">*</span>
             </label>
             <input
               type="text"
-              id="fullName"
-              {...register('fullName')}
-              placeholder="Enter your full name"
-              className={errors.fullName ? styles.error : ''}
-              aria-invalid={!!errors.fullName}
-              aria-describedby={errors.fullName ? 'fullName-error' : undefined}
+              id="firstName"
+              {...register('firstName')}
+              placeholder="Enter your first name"
+              className={errors.firstName ? styles.error : ''}
+              aria-invalid={!!errors.firstName}
+              aria-describedby={errors.firstName ? 'firstName-error' : undefined}
             />
-            {errors.fullName && (
-              <div className={`${styles.errorText} ${styles.show}`} id="fullName-error" role="alert">
-                {errors.fullName.message}
+            {errors.firstName && (
+              <div className={`${styles.errorText} ${styles.show}`} id="firstName-error" role="alert">
+                {errors.firstName.message}
+              </div>
+            )}
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="lastName">
+              Last Name
+              <span className={styles.requiredStar} aria-label="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              {...register('lastName')}
+              placeholder="Enter your last name"
+              className={errors.lastName ? styles.error : ''}
+              aria-invalid={!!errors.lastName}
+              aria-describedby={errors.lastName ? 'lastName-error' : undefined}
+            />
+            {errors.lastName && (
+              <div className={`${styles.errorText} ${styles.show}`} id="lastName-error" role="alert">
+                {errors.lastName.message}
               </div>
             )}
           </div>
@@ -275,22 +372,27 @@ export default function ApplicationForm() {
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="country">
-              Country of Residence
+            <label htmlFor="state">
+              State in Nigeria
               <span className={styles.requiredStar} aria-label="required">*</span>
             </label>
-            <input
-              type="text"
-              id="country"
-              {...register('country')}
-              placeholder="e.g. Nigeria"
-              className={errors.country ? styles.error : ''}
-              aria-invalid={!!errors.country}
-              aria-describedby={errors.country ? 'country-error' : undefined}
-            />
-            {errors.country && (
-              <div className={`${styles.errorText} ${styles.show}`} id="country-error" role="alert">
-                {errors.country.message}
+            <select
+              id="state"
+              {...register('state')}
+              className={errors.state ? styles.error : ''}
+              aria-invalid={!!errors.state}
+              aria-describedby={errors.state ? 'state-error' : undefined}
+            >
+              <option value="">Select your state</option>
+              {nigerianStates.map((state) => (
+                <option key={state} value={state}>
+                  {state}
+                </option>
+              ))}
+            </select>
+            {errors.state && (
+              <div className={`${styles.errorText} ${styles.show}`} id="state-error" role="alert">
+                {errors.state.message}
               </div>
             )}
           </div>
@@ -341,48 +443,9 @@ export default function ApplicationForm() {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="experience">
-            Briefly describe your business / leadership experience
-            <span className={styles.requiredStar} aria-label="required">*</span>
-          </label>
-          <textarea
-            id="experience"
-            {...register('experience')}
-            placeholder="Share your experience building businesses, leading teams, hitting targets or creating impact..."
-            className={errors.experience ? styles.error : ''}
-            aria-invalid={!!errors.experience}
-            aria-describedby={errors.experience ? 'experience-error' : undefined}
-          />
-          {errors.experience && (
-            <div className={`${styles.errorText} ${styles.show}`} id="experience-error" role="alert">
-              {errors.experience.message}
-            </div>
-          )}
-        </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor="whyYou">
-            Why should you be selected for KeytoDCity Reality Show?
-            <span className={styles.requiredStar} aria-label="required">*</span>
-          </label>
-          <textarea
-            id="whyYou"
-            {...register('whyYou')}
-            placeholder="Tell us what makes you different. What will you bring to the show, and why do you believe you can win?"
-            className={errors.whyYou ? styles.error : ''}
-            aria-invalid={!!errors.whyYou}
-            aria-describedby={errors.whyYou ? 'whyYou-error' : undefined}
-          />
-          {errors.whyYou && (
-            <div className={`${styles.errorText} ${styles.show}`} id="whyYou-error" role="alert">
-              {errors.whyYou.message}
-            </div>
-          )}
-        </div>
-
-        <div className={styles.formGroup}>
           <label htmlFor="socials">
-            Link to your social media / website (optional)
+            Link to your social media / website
+            <span className={styles.requiredStar} aria-label="required">*</span>
           </label>
           <input
             type="text"
@@ -404,8 +467,47 @@ export default function ApplicationForm() {
         </div>
 
         <div className={styles.formGroup}>
+          <label htmlFor="video">
+            Upload 1-Minute Video
+            <span className={styles.requiredStar} aria-label="required">*</span>
+          </label>
+          <input
+            type="file"
+            id="video"
+            accept="video/*"
+            {...register('video')}
+            onChange={handleVideoChange}
+            className={errors.video || videoError ? styles.error : ''}
+            aria-invalid={!!errors.video || !!videoError}
+            aria-describedby={errors.video || videoError ? 'video-error' : undefined}
+          />
+          {videoDuration !== null && (
+            <div style={{ 
+              marginTop: '0.5rem', 
+              fontSize: '0.85rem',
+              color: videoDuration > 60 ? 'var(--accent)' : 'var(--text-muted)'
+            }}>
+              Video duration: {Math.round(videoDuration)} seconds
+            </div>
+          )}
+          {videoError && (
+            <div className={`${styles.errorText} ${styles.show}`} id="video-error" role="alert" style={{ marginTop: '0.5rem' }}>
+              ⚠️ {videoError}
+            </div>
+          )}
+          {errors.video && (
+            <div className={`${styles.errorText} ${styles.show}`} id="video-error" role="alert">
+              {errors.video.message}
+            </div>
+          )}
+          <div className={styles.helperText} style={{ color: 'var(--accent)', fontWeight: '600' }}>
+            ⚠️ Warning: Your video must be exactly 1 minute (60 seconds). Videos longer than 1 minute will not be accepted.
+          </div>
+        </div>
+
+        <div className={styles.formGroup}>
           <label htmlFor="referral">
-            How did you hear about KeytoDCity Reality Show?
+            How did you hear about KeystoDCity Reality Show?
             <span className={styles.requiredStar} aria-label="required">*</span>
           </label>
           <select

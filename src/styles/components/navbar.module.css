@@ -28,12 +28,32 @@
   gap: 0.75rem;
 }
 
+.brandLogoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
 .brandLogo {
   width: 70px;
   height: 70px;
   object-fit: contain;
   display: block;
   flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.brandLogo:first-of-type {
+  margin-right: -2px;
+}
+
+.brandLogo:last-of-type {
+  margin-left: -2px;
 }
 
 @media (max-width: 720px) {

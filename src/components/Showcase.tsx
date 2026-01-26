@@ -21,7 +21,7 @@ export default function Showcase() {
     {
       type: 'video',
       title: 'Behind the Scenes',
-      description: 'Exclusive look at the boardroom challenges and real-world business tasks',
+      description: 'Exclusive look at the boardroom challenges and real-world Real Estate tasks',
       thumbnail: '/images/how-it-works.jpg',
       duration: '8:15',
       link: '/about#how-it-works',
@@ -65,69 +65,70 @@ export default function Showcase() {
   };
 
   return (
-    <AnimatedSection id="showcase">
-      <div className={styles.sectionHeader}>
-        <div>
-          <p className={styles.sectionTag}>Entertainment & Updates</p>
-          <h2 className={styles.sectionTitle}>
-            Content <span>Loved by Entrepreneurs</span>
-          </h2>
-        </div>
-        <p className={styles.sectionSubtitle}>
-          Watch exclusive videos, read the latest news, and stay connected with the KeytoDCity community.
-        </p>
-      </div>
+    <div></div>
+    // <AnimatedSection id="showcase">
+    //   <div className={styles.sectionHeader}>
+    //     <div>
+    //       <p className={styles.sectionTag}>Entertainment & Updates</p>
+    //       <h2 className={styles.sectionTitle}>
+    //         Content <span>Loved by Entrepreneurs</span>
+    //       </h2>
+    //     </div>
+    //     <p className={styles.sectionSubtitle}>
+    //       Watch exclusive videos, read the latest news, and stay connected with the KeystoDCity community.
+    //     </p>
+    //   </div>
 
-      <div className={showcaseStyles.showcaseGrid}>
-        {showcaseItems.map((item, index) => (
-          <div 
-            key={index} 
-            className={showcaseStyles.showcaseCard}
-            onClick={() => handleItemClick(item)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                handleItemClick(item);
-              }
-            }}
-            aria-label={`${item.type === 'news' ? 'Read' : 'Watch'}: ${item.title}`}
-          >
-            {item.type === 'video' && item.thumbnail && (
-              <div className={showcaseStyles.thumbnailContainer}>
-                <img
-                  src={item.thumbnail}
-                  alt={item.title}
-                  className={showcaseStyles.thumbnail}
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-                <div className={showcaseStyles.playButton} aria-hidden="true">
-                  <span>▶</span>
-                </div>
-                {item.duration && (
-                  <div className={showcaseStyles.duration}>{item.duration}</div>
-                )}
-                <div className={showcaseStyles.overlay}></div>
-              </div>
-            )}
-            {item.type === 'news' && (
-              <div className={showcaseStyles.newsBadge}>
-                <span>📰</span> News
-              </div>
-            )}
-            <div className={showcaseStyles.content}>
-              <h3 className={showcaseStyles.title}>{item.title}</h3>
-              <p className={showcaseStyles.description}>{item.description}</p>
-              {item.date && (
-                <span className={showcaseStyles.date}>{item.date}</span>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-    </AnimatedSection>
+    //   <div className={showcaseStyles.showcaseGrid}>
+    //     {showcaseItems.map((item, index) => (
+    //       <div 
+    //         key={index} 
+    //         className={showcaseStyles.showcaseCard}
+    //         onClick={() => handleItemClick(item)}
+    //         role="button"
+    //         tabIndex={0}
+    //         onKeyDown={(e) => {
+    //           if (e.key === 'Enter' || e.key === ' ') {
+    //             e.preventDefault();
+    //             handleItemClick(item);
+    //           }
+    //         }}
+    //         aria-label={`${item.type === 'news' ? 'Read' : 'Watch'}: ${item.title}`}
+    //       >
+    //         {item.type === 'video' && item.thumbnail && (
+    //           <div className={showcaseStyles.thumbnailContainer}>
+    //             <img
+    //               src={item.thumbnail}
+    //               alt={item.title}
+    //               className={showcaseStyles.thumbnail}
+    //               onError={(e) => {
+    //                 e.currentTarget.style.display = 'none';
+    //               }}
+    //             />
+    //             <div className={showcaseStyles.playButton} aria-hidden="true">
+    //               <span>▶</span>
+    //             </div>
+    //             {item.duration && (
+    //               <div className={showcaseStyles.duration}>{item.duration}</div>
+    //             )}
+    //             <div className={showcaseStyles.overlay}></div>
+    //           </div>
+    //         )}
+    //         {item.type === 'news' && (
+    //           <div className={showcaseStyles.newsBadge}>
+    //             <span>📰</span> News
+    //           </div>
+    //         )}
+    //         <div className={showcaseStyles.content}>
+    //           <h3 className={showcaseStyles.title}>{item.title}</h3>
+    //           <p className={showcaseStyles.description}>{item.description}</p>
+    //           {item.date && (
+    //             <span className={showcaseStyles.date}>{item.date}</span>
+    //           )}
+    //         </div>
+    //       </div>
+    //     ))}
+    //   </div>
+    // </AnimatedSection>
   );
 }

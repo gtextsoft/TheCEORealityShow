@@ -12,18 +12,18 @@ export default function About() {
         <div>
           <p className={styles.sectionTag}>About the Show</p>
           <h2 className={styles.sectionTitle}>
-            The Business Reality Show <span>That Changes Lives</span>
+            The Real Estate Reality Show <span>That Changes Lives</span>
           </h2>
         </div>
         <p className={styles.sectionSubtitle}>
           This is not entertainment for entertainment's sake. It's an intense, high-level
-          business immersion designed to produce a leader who can build and scale real
+          Real Estate immersion designed to produce a leader who can build and scale real
           companies in the real world.
         </p>
       </div>
 
       {/* Certificate Requirement Banner */}
-      <div style={{
+      {/* <div style={{
         background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
         padding: '2rem',
         borderRadius: '16px',
@@ -49,7 +49,7 @@ export default function About() {
           margin: '0 auto 1.5rem',
           color: 'rgba(255, 255, 255, 0.95)'
         }}>
-          All applicants <strong>MUST</strong> have a <strong>Real Estate Course Certificate</strong> to be eligible for KeytoDCity Reality Show.
+          All applicants <strong>MUST</strong> have a <strong>Real Estate Course Certificate</strong> to be eligible for KeystoDCity Reality Show.
           <br />
           Don't have one yet? No problem! Get certified through our official program below:
         </p>
@@ -81,7 +81,7 @@ export default function About() {
           color: 'rgba(255, 255, 255, 0.9)'
         }}>
         </p>
-      </div>
+      </div> */}
 
 
       <div className={styles.grid2}>
@@ -89,26 +89,26 @@ export default function About() {
           <div className={aboutStyles.imageContainer}>
             <img
               src="/images/about-show.jpg"
-              alt="KeytoDCity Reality Show contestants in boardroom"
+              alt="KeystoDCity Reality Show contestants in boardroom"
               className={aboutStyles.aboutImage}
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}
             />
           </div>
-          <h3>What is "KeytoDCity Reality Show"?</h3>
+          <h3>What is "KeystoDCity Reality Show"?</h3>
           <p>
-            KeytoDCity Reality Show is a business and leadership television experience where
+            KeystoDCity Reality Show is a Real Estate and leadership television experience where
             selected contestants live, learn and compete in a structured environment that
             mirrors the real world of entrepreneurship.
           </p>
           <ul className={styles.bulletList}>
             <li>
-              You will work on real-life business challenges across multiple industries including
+              You will work on real-life Real Estate challenges across multiple industries including
               real estate, fintech, media, technology and more.
             </li>
             <li>
-              You will be mentored and assessed by a panel of top business leaders.
+              You will be mentored and assessed by a panel of top Real Estate leaders.
             </li>
             <li>
               Every week, contestants will face tasks in sales, leadership, operations, finance,
@@ -121,7 +121,7 @@ export default function About() {
             </li>
           </ul>
           <div className={styles.pillRow}>
-            <span className={styles.pill}>Business</span>
+            <span className={styles.pill}>Real Estate</span>
             <span className={styles.pill}>Strategy</span>
             <span className={styles.pill}>Execution</span>
             <span className={styles.pill}>Leadership</span>

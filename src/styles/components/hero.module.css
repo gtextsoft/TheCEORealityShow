@@ -19,6 +19,18 @@
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  /* border: .1rem solid red; */
+}
+
+.heroMid{
+  max-width: 1120px;
+  margin: 2rem auto 3rem auto;
+  padding: 1.5rem 1.25rem 3rem 1.25rem;
+  /* display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+  gap: 2.5rem; */
+  align-items: center;
+  position: relative;
 }
 
 .heroBadge {

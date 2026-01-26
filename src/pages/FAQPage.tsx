@@ -16,7 +16,7 @@ const faqItems = [
   {
     question: 'Where will the show be filmed?',
     answer:
-      'The show will be filmed in a secure, fully equipped location that reflects the standards of a modern business environment. Exact location and dates will be shared privately with selected contestants.',
+      'The show will be filmed in a secure, fully equipped location that reflects the standards of a modern Real Estate environment. Exact location and dates will be shared privately with selected contestants.',
   },
   {
     question: "How will I know if I've been shortlisted?",
@@ -59,7 +59,7 @@ export default function FAQPage() {
           </h2>
         </div>
         <p className={styles.sectionSubtitle}>
-          Find answers to common questions about the KeytoDCity Reality Show, application process, 
+          Find answers to common questions about the KeystoDCity Reality Show, application process, 
           eligibility, and more.
         </p>
       </div>
