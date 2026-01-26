@@ -99,10 +99,25 @@ export default function ApplicationForm() {
     setShowSuccess(false);
 
     try {
-      // Simulate API call - in production, this would be a real API endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Send email using mailto link (opens email client)
+      const email = 'info@saproductiontv.com';
+      const subject = encodeURIComponent('KeytoDCity Reality Show Application');
+      const body = encodeURIComponent(
+        `New Application Submission\n\n` +
+        `Full Name: ${data.fullName}\n` +
+        `Email: ${data.email}\n` +
+        `Phone: ${data.phone}\n` +
+        `Country: ${data.country}\n` +
+        `Age: ${data.age}\n` +
+        `Occupation: ${data.occupation}\n` +
+        `Experience: ${data.experience}\n` +
+        `Why You: ${data.whyYou}\n` +
+        `Social Media: ${data.socials || 'N/A'}\n` +
+        `Referral Source: ${data.referral}\n` +
+        `Submitted At: ${new Date().toISOString()}`
+      );
 
-      // Store submission in localStorage (mock backend)
+      // Store in localStorage first
       const submissions = JSON.parse(localStorage.getItem('ceo-reality-show-submissions') || '[]');
       submissions.push({
         ...data,
@@ -113,6 +128,12 @@ export default function ApplicationForm() {
       // Clear draft
       setSavedDraft({});
       localStorage.removeItem(FORM_STORAGE_KEY);
+
+      // Open email client to send the application
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
+      // Small delay to allow email client to open, then show success
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
       // Reset form
       reset();
@@ -144,7 +165,7 @@ export default function ApplicationForm() {
     { value: 'email', label: 'Email / Newsletter' },
     { value: 'tv', label: 'TV / Radio' },
     { value: 'friend', label: 'Friend / Family / Colleague' },
-    { value: 'event', label: 'Stephen Akintayo Event / Training' },
+    { value: 'event', label: 'Event / Training' },
     { value: 'other', label: 'Other' },
   ];
 

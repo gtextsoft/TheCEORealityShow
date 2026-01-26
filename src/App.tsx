@@ -44,7 +44,7 @@ function App() {
           path="/" 
           element={
             <Layout 
-              title="KeytoDCity Reality Show with Dr. Stephen Akintayo"
+              title="KeytoDCity Reality Show"
               description="Apply for KeytoDCity Reality Show and stand a chance to win ₦100,000,000, 1 acre of land, and 1 year as CEO of a top subsidiary."
             >
               <HomePage />
@@ -56,7 +56,7 @@ function App() {
           element={
             <Layout 
               title="About the Show | KeytoDCity Reality Show"
-              description="Learn about the KeytoDCity Reality Show, how it works, and meet Dr. Stephen Akintayo."
+              description="Learn about the KeytoDCity Reality Show and how it works."
             >
               <AboutPage />
             </Layout>

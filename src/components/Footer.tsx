@@ -1,4 +1,5 @@
 import { smoothScrollTo } from '../utils/scroll';
+import { FacebookIcon, InstagramIcon, YouTubeIcon, TwitterIcon } from './SocialIcons';
 import styles from '../styles/components/footer.module.css';
 
 /**
@@ -20,14 +21,14 @@ export default function Footer() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <img 
             src="/images/logo.jpeg" 
-            alt="Stephen Akintayo Foundation Logo" 
+            alt="KeytoDCity Reality Show Logo" 
             className={styles.footerLogo}
             onError={(e) => {
               e.currentTarget.style.display = 'none';
             }}
           />
           <p>
-            © {currentYear} KeytoDCity Reality Show with Dr. Stephen Akintayo. All rights reserved.
+            © {currentYear} KeytoDCity Reality Show. All rights reserved.
           </p>
         </div>
         <div className={styles.footerSocial}>
@@ -40,7 +41,8 @@ export default function Footer() {
               aria-label="Follow us on Facebook"
               className={styles.socialLink}
             >
-              <span aria-hidden="true">📘</span> Facebook
+              <FacebookIcon className={styles.socialIcon} />
+              <span>Facebook</span>
             </a>
             <a 
               href="https://instagram.com" 
@@ -49,7 +51,8 @@ export default function Footer() {
               aria-label="Follow us on Instagram"
               className={styles.socialLink}
             >
-              <span aria-hidden="true">📷</span> Instagram
+              <InstagramIcon className={styles.socialIcon} />
+              <span>Instagram</span>
             </a>
             <a 
               href="https://youtube.com" 
@@ -58,7 +61,8 @@ export default function Footer() {
               aria-label="Follow us on YouTube"
               className={styles.socialLink}
             >
-              <span aria-hidden="true">▶️</span> YouTube
+              <YouTubeIcon className={styles.socialIcon} />
+              <span>YouTube</span>
             </a>
             <a 
               href="https://twitter.com" 
@@ -67,7 +71,8 @@ export default function Footer() {
               aria-label="Follow us on Twitter"
               className={styles.socialLink}
             >
-              <span aria-hidden="true">🐦</span> Twitter
+              <TwitterIcon className={styles.socialIcon} />
+              <span>Twitter</span>
             </a>
           </div>
         </div>

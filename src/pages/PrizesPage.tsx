@@ -31,13 +31,13 @@ const prizes: PrizeDetail[] = [
   {
     title: 'CEO Position',
     value: '1 Year as CEO',
-    description: 'Lead a fast-growing subsidiary company under the Stephen Akintayo group',
+    description: 'Lead a fast-growing subsidiary company',
     image: '/images/prize-4.jpg',
   },
   {
     title: 'Business Mentorship',
     value: 'Lifetime Access',
-    description: 'Ongoing mentorship from Dr. Stephen Akintayo and top business leaders',
+    description: 'Ongoing mentorship from top business leaders',
     image: '/images/prize-5.jpg',
   },
   {

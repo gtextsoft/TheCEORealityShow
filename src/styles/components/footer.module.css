@@ -76,6 +76,12 @@
   text-decoration: none;
 }
 
+.socialIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 .socialLink:hover {
   color: var(--text-main);
   border-color: var(--primary);

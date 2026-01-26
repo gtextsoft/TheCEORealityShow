@@ -77,48 +77,6 @@ export default function AboutPage() {
         </button>
       </div>
 
-      {/* About Dr. Stephen Akintayo Section */}
-      <div className={styles.card} style={{ marginBottom: '2rem', padding: '2rem' }}>
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.5fr)', 
-          gap: '2rem',
-          alignItems: 'center'
-        }} className={aboutStyles.organizerGrid}>
-          <div className={aboutStyles.imageContainer} style={{ height: '300px', marginBottom: 0 }}>
-            <img
-              src="/images/drsa.jpeg"
-              alt="Dr. Stephen Akintayo - Business Leader and Organizer"
-              className={aboutStyles.aboutImage}
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-            />
-          </div>
-          <div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>
-              Meet the Organizer: <span style={{ color: 'var(--primary)' }}>Dr. Stephen Akintayo</span>
-            </h3>
-            <p style={{ marginBottom: '1rem', lineHeight: '1.8' }}>
-              Dr. Stephen Akintayo is a renowned business leader, entrepreneur, and philanthropist 
-              dedicated to empowering the next generation of business leaders. Through KeytoDCity Reality Show, 
-              he provides a unique platform for ambitious professionals to showcase their leadership 
-              capabilities and compete for life-changing opportunities.
-            </p>
-            <p style={{ marginBottom: '1rem', lineHeight: '1.8' }}>
-              As the founder of the Stephen Akintayo Foundation, Dr. Akintayo has been instrumental 
-              in providing business education, mentorship, and real-world opportunities to thousands 
-              of entrepreneurs across Nigeria and the diaspora.
-            </p>
-            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '1rem' }}>
-              <span className={styles.pill}>Business Leader</span>
-              <span className={styles.pill}>Mentor</span>
-              <span className={styles.pill}>Philanthropist</span>
-              <span className={styles.pill}>Real Estate Mogul</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div className={styles.grid2}>
         <article className={styles.card}>
@@ -132,7 +90,7 @@ export default function AboutPage() {
               }}
             />
           </div>
-          <h3>What is "KeytoDCity Reality Show with Dr. Stephen Akintayo"?</h3>
+          <h3>What is "KeytoDCity Reality Show"?</h3>
           <p>
             KeytoDCity Reality Show is a business and leadership television experience where
             selected contestants live, learn and compete in a structured environment that
@@ -144,8 +102,7 @@ export default function AboutPage() {
               real estate, fintech, media, technology and more.
             </li>
             <li>
-              You will be mentored and assessed by Dr. Stephen Akintayo and a panel of top
-              business leaders.
+              You will be mentored and assessed by a panel of top business leaders.
             </li>
             <li>
               Every week, contestants will face tasks in sales, leadership, operations, finance,
@@ -154,7 +111,7 @@ export default function AboutPage() {
             <li>
               Only one contestant will emerge as the
               <strong> Winner & Chief Executive Officer</strong>
-              of a fast-growing subsidiary under the Stephen Akintayo group.
+              of a fast-growing subsidiary company.
             </li>
           </ul>
           <div className={styles.pillRow}>
@@ -189,7 +146,7 @@ export default function AboutPage() {
               <div className={styles.stepTitle}>Apply Online</div>
               <div className={styles.stepText}>
                 Complete the application form with accurate details about who you are, what you
-                do and why you want to become a CEO under Dr. Stephen.
+                do and why you want to become a CEO.
               </div>
             </div>
             <div className={styles.step}>

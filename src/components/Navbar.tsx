@@ -44,7 +44,7 @@ export default function Navbar() {
         <Link to="/" className={styles.brand} aria-label="Go to home">
           <img 
             src="/images/logo.jpeg" 
-            alt="Stephen Akintayo Foundation Logo" 
+            alt="KeytoDCity Reality Show Logo" 
             className={styles.brandLogo}
             onError={(e) => {
               // Fallback to text icon if image fails to load
@@ -55,8 +55,8 @@ export default function Navbar() {
           />
           <div className={styles.brandIcon} aria-hidden="true" style={{ display: 'none' }}>SA</div>
           <div className={styles.brandText}>
-            <span>Dr. Stephen Akintayo</span>
-            <span>KeytoDCity Reality Show</span>
+            <span>KeytoDCity</span>
+            <span>Reality Show</span>
           </div>
         </Link>
 

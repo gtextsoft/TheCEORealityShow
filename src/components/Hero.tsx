@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import CountdownTimer from './CountdownTimer';
+import { FacebookIcon, InstagramIcon, YouTubeIcon, TwitterIcon } from './SocialIcons';
 import type { Prize } from '../types';
 import styles from '../styles/components/hero.module.css';
 
@@ -29,7 +30,7 @@ export default function Hero({ deadline, prizes }: HeroProps) {
 
         <p className={styles.heroSubtitle}>
           <strong>Step into the boardroom, not the background. </strong>
-          Join the <strong> KeytoDCity Reality Show with Dr. Stephen Akintayo</strong> and compete for
+          Join the <strong> KeytoDCity Reality Show</strong> and compete for
           a chance to win the following prizes:
           <strong> ₦100,000,000 cash, a brand new car, 1 acre of land</strong>, and
           <strong> 1 year as CEO</strong> of one of his company's fast-growing subsidiaries.
@@ -73,7 +74,8 @@ export default function Hero({ deadline, prizes }: HeroProps) {
               aria-label="Follow us on Facebook"
               className={styles.heroSocialLink}
             >
-              <span aria-hidden="true">📘</span> Facebook
+              <FacebookIcon className={styles.socialIcon} />
+              <span>Facebook</span>
             </a>
             <a 
               href="https://instagram.com" 
@@ -82,7 +84,8 @@ export default function Hero({ deadline, prizes }: HeroProps) {
               aria-label="Follow us on Instagram"
               className={styles.heroSocialLink}
             >
-              <span aria-hidden="true">📷</span> Instagram
+              <InstagramIcon className={styles.socialIcon} />
+              <span>Instagram</span>
             </a>
             <a 
               href="https://youtube.com" 
@@ -91,7 +94,8 @@ export default function Hero({ deadline, prizes }: HeroProps) {
               aria-label="Follow us on YouTube"
               className={styles.heroSocialLink}
             >
-              <span aria-hidden="true">▶️</span> YouTube
+              <YouTubeIcon className={styles.socialIcon} />
+              <span>YouTube</span>
             </a>
             <a 
               href="https://twitter.com" 
@@ -100,7 +104,8 @@ export default function Hero({ deadline, prizes }: HeroProps) {
               aria-label="Follow us on Twitter"
               className={styles.heroSocialLink}
             >
-              <span aria-hidden="true">🐦</span> Twitter
+              <TwitterIcon className={styles.socialIcon} />
+              <span>Twitter</span>
             </a>
           </div>
         </div>

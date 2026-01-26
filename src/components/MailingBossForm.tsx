@@ -92,7 +92,7 @@ const referralSources = [
   'Email / Newsletter',
   'TV / Radio',
   'Friend / Family / Colleague',
-  'Stephen Akintayo Event / Training',
+  'Event / Training',
   'Online Advertisement',
   'Other',
 ];
@@ -178,7 +178,7 @@ export default function MailingBossForm() {
         <div className={styles.formHeader}>
           <h3>Apply Now to Join KeytoDCity Reality Show</h3>
           <p>
-            Fill out the form below to apply for KeytoDCity Reality Show with Dr. Stephen Akintayo.
+            Fill out the form below to apply for KeytoDCity Reality Show.
             All fields marked with an asterisk (*) are required.
           </p>
         </div>

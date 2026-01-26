@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import AnimatedSection from './AnimatedSection';
 import styles from '../styles/components/sections.module.css';
 import showcaseStyles from '../styles/components/showcase.module.css';
@@ -6,6 +7,8 @@ import showcaseStyles from '../styles/components/showcase.module.css';
  * Video/Content showcase section similar to DStv's entertainment section
  */
 export default function Showcase() {
+  const navigate = useNavigate();
+
   const showcaseItems = [
     {
       type: 'video',
@@ -13,6 +16,7 @@ export default function Showcase() {
       description: 'Get to know the ambitious entrepreneurs competing for the CEO position',
       thumbnail: '/images/about-show.jpg',
       duration: '5:30',
+      link: '/about',
     },
     {
       type: 'video',
@@ -20,6 +24,7 @@ export default function Showcase() {
       description: 'Exclusive look at the boardroom challenges and real-world business tasks',
       thumbnail: '/images/how-it-works.jpg',
       duration: '8:15',
+      link: '/about#how-it-works',
     },
     {
       type: 'video',
@@ -27,18 +32,21 @@ export default function Showcase() {
       description: 'Hear from the organizer about creating opportunities for the next generation',
       thumbnail: '/images/drsa.jpeg',
       duration: '12:00',
+      link: '/about',
     },
     {
       type: 'news',
       title: 'Applications Now Open',
       description: 'The 2026 season is accepting applications. Don\'t miss your chance!',
       date: 'Jan 22, 2026',
+      link: '/apply',
     },
     {
       type: 'news',
       title: 'Prize Pool Announced',
       description: '₦100M cash, luxury car, land ownership, and CEO position up for grabs',
       date: 'Jan 15, 2026',
+      link: '/prizes',
     },
     {
       type: 'video',
@@ -46,8 +54,15 @@ export default function Showcase() {
       description: 'Previous participants share their journey and transformation',
       thumbnail: '/images/hero-ceo.jpg',
       duration: '15:45',
+      link: '/about',
     },
   ];
+
+  const handleItemClick = (item: typeof showcaseItems[0]) => {
+    if (item.link) {
+      navigate(item.link);
+    }
+  };
 
   return (
     <AnimatedSection id="showcase">
@@ -65,7 +80,20 @@ export default function Showcase() {
 
       <div className={showcaseStyles.showcaseGrid}>
         {showcaseItems.map((item, index) => (
-          <div key={index} className={showcaseStyles.showcaseCard}>
+          <div 
+            key={index} 
+            className={showcaseStyles.showcaseCard}
+            onClick={() => handleItemClick(item)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleItemClick(item);
+              }
+            }}
+            aria-label={`${item.type === 'news' ? 'Read' : 'Watch'}: ${item.title}`}
+          >
             {item.type === 'video' && item.thumbnail && (
               <div className={showcaseStyles.thumbnailContainer}>
                 <img

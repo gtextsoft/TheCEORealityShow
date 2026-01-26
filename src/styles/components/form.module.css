@@ -32,6 +32,25 @@
   .formGrid {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .formCard {
+    padding: 1rem;
+  }
+
+  .formHeader h3 {
+    font-size: 0.95rem;
+  }
+
+  .formHeader p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formCard {
+    padding: 0.75rem;
+    border-radius: 16px;
+  }
 }
 
 .formGroup {
