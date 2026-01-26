@@ -1,5 +1,5 @@
 import Hero from '../components/Hero';
-import Showcase from '../components/Showcase';
+// import Showcase from '../components/Showcase';
 import type { Prize } from '../types';
 
 // Application deadline - March 1, 2026
@@ -36,7 +36,7 @@ export default function HomePage() {
   return (
     <>
       <Hero deadline={APPLICATION_DEADLINE} prizes={prizes} />
-      <Showcase />
+      {/* <Showcase /> */}
     </>
   );
 }
