@@ -26,12 +26,12 @@
   align-items: center;
   padding: 0.25rem 0.55rem;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  background: radial-gradient(circle at 0 0, rgba(249, 115, 22, 0.16), transparent),
-    rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: radial-gradient(circle at 0 0, rgba(229, 9, 20, 0.2), transparent),
+    rgba(26, 26, 26, 0.9);
   backdrop-filter: blur(12px);
   font-size: 0.78rem;
-  color: #e5e7eb;
+  color: var(--text-main);
   gap: 0.45rem;
   width: fit-content;
 }
@@ -41,7 +41,17 @@
   height: 7px;
   border-radius: 999px;
   background: radial-gradient(circle at 30% 20%, var(--primary), var(--primary-dark));
-  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.25);
+  box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 .heroBadge span {
@@ -58,10 +68,11 @@
 }
 
 .heroTitle .highlight {
-  background: linear-gradient(to right, var(--primary), var(--secondary));
+  background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-shadow: 0 0 30px rgba(229, 9, 20, 0.5);
 }
 
 .heroSubtitle {
@@ -90,14 +101,21 @@
 
 .prizeCard {
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.08), transparent),
-    rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: radial-gradient(circle at top left, rgba(229, 9, 20, 0.1), transparent),
+    rgba(26, 26, 26, 0.95);
   padding: 0.85rem 0.9rem;
-  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.7);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prizeCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(229, 9, 20, 0.3);
+  border-color: rgba(229, 9, 20, 0.3);
 }
 
 .prizeLabel {
@@ -131,7 +149,7 @@
 .btnPrimary {
   border-radius: 999px;
   padding: 0.8rem 1.8rem;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border: none;
   font-weight: 700;
   font-size: 0.96rem;
@@ -139,14 +157,15 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: #020617;
-  box-shadow: 0 22px 50px rgba(249, 115, 22, 0.35);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  color: var(--text-main);
+  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .btnPrimary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 26px 60px rgba(249, 115, 22, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(229, 9, 20, 0.5);
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
 }
 
 .btnPrimary:disabled {
@@ -157,11 +176,11 @@
 .btnOutline {
   border-radius: 999px;
   padding: 0.75rem 1.4rem;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(26, 26, 26, 0.8);
   font-size: 0.88rem;
   cursor: pointer;
-  color: #e5e7eb;
+  color: var(--text-main);
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -169,8 +188,9 @@
 }
 
 .btnOutline:hover {
-  background: rgba(15, 23, 42, 1);
-  border-color: #e5e7eb;
+  background: rgba(26, 26, 26, 1);
+  border-color: var(--text-main);
+  transform: translateY(-1px);
 }
 
 .heroMeta {
@@ -217,10 +237,10 @@
 .heroCard {
   border-radius: 24px;
   padding: 1.1rem;
-  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.09), transparent),
-    rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.95);
+  background: radial-gradient(circle at top left, rgba(229, 9, 20, 0.1), transparent),
+    rgba(26, 26, 26, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(229, 9, 20, 0.1);
   overflow: hidden;
   position: relative;
   isolation: isolate;
@@ -247,9 +267,19 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  border: 1px solid rgba(249, 115, 22, 0.7);
-  color: #fed7aa;
-  background: rgba(249, 115, 22, 0.2);
+  border: 1px solid rgba(229, 9, 20, 0.7);
+  color: #ffb3b3;
+  background: rgba(229, 9, 20, 0.2);
+  animation: pulseStatus 2s ease-in-out infinite;
+}
+
+@keyframes pulseStatus {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(229, 9, 20, 0);
+  }
 }
 
 .heroMainText {
@@ -273,9 +303,9 @@
 .heroCountdownItem {
   text-align: center;
   border-radius: 12px;
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 0.5rem 0.35rem;
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(26, 26, 26, 0.95);
 }
 
 .heroCountdownNumber {
@@ -311,11 +341,52 @@
 .heroGlow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 0%, rgba(249, 115, 22, 0.24), transparent),
-    radial-gradient(circle at 80% 100%, rgba(15, 118, 110, 0.3), transparent);
+  background: radial-gradient(circle at 20% 0%, rgba(139, 92, 246, 0.2), transparent),
+    radial-gradient(circle at 80% 100%, rgba(59, 130, 246, 0.2), transparent);
   opacity: 0.9;
   mix-blend-mode: soft-light;
   pointer-events: none;
   z-index: -1;
 }
 
+.heroSocial {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.heroSocialTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.heroSocialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.heroSocialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.heroSocialLink:hover {
+  color: var(--text-main);
+  border-color: var(--primary);
+  background: rgba(139, 92, 246, 0.1);
+  transform: translateY(-2px);
+}

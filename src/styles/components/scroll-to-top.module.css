@@ -5,15 +5,15 @@
   width: 48px;
   height: 48px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border: none;
-  color: #0f172a;
+  color: var(--text-main);
   font-size: 1.2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 16px 35px rgba(249, 115, 22, 0.35);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
   transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.3s ease;
   z-index: 40;
   opacity: 0;
@@ -27,7 +27,8 @@
 
 .scrollToTop:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 45px rgba(249, 115, 22, 0.4);
+  box-shadow: 0 12px 35px rgba(139, 92, 246, 0.5);
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
 }
 
 .scrollToTop:focus {

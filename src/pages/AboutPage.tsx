@@ -1,11 +1,11 @@
-import AnimatedSection from './AnimatedSection';
+import AnimatedSection from '../components/AnimatedSection';
 import styles from '../styles/components/sections.module.css';
 import aboutStyles from '../styles/components/about.module.css';
 
 /**
- * About section component
+ * About page component
  */
-export default function About() {
+export default function AboutPage() {
   return (
     <AnimatedSection id="about">
       <div className={styles.sectionHeader}>
@@ -30,7 +30,7 @@ export default function About() {
         marginBottom: '3rem',
         textAlign: 'center',
         color: 'white',
-            boxShadow: '0 10px 40px rgba(139, 92, 246, 0.4)'
+        boxShadow: '0 10px 40px rgba(139, 92, 246, 0.4)'
       }}>
         <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>📜</div>
         <h3 style={{
@@ -75,12 +75,6 @@ export default function About() {
         >
           Get Your Certificate Now 🎓
         </button>
-        <p style={{
-          marginTop: '1rem',
-          fontSize: '0.95rem',
-          color: 'rgba(255, 255, 255, 0.9)'
-        }}>
-        </p>
       </div>
 
       {/* About Dr. Stephen Akintayo Section */}
@@ -220,4 +214,3 @@ export default function About() {
     </AnimatedSection>
   );
 }
-

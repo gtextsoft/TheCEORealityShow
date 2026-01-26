@@ -1,45 +1,17 @@
 import { useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Prizes from './components/Prizes';
-import Eligibility from './components/Eligibility';
-import Sponsorship from './components/Sponsorship';
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
-import SEOHead from './components/SEOHead';
-import type { Prize } from './types';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import PrizesPage from './pages/PrizesPage';
+import EligibilityPage from './pages/EligibilityPage';
+import SponsorshipPage from './pages/SponsorshipPage';
+import FAQPage from './pages/FAQPage';
+import ApplicationPage from './pages/ApplicationPage';
 import './styles/globals.css';
 
-// Application deadline - March 1, 2026
-const APPLICATION_DEADLINE = new Date('2026-03-01T23:59:59');
-
-// Prize information
-const prizes: Prize[] = [
-  {
-    label: 'Grand Prize',
-    value: '₦100,000,000',
-    subtitle: 'Cash Reward',
-  },
-  {
-    label: 'Brand New Car',
-    value: 'Premium Vehicle',
-    subtitle: 'Luxury Car',
-  },
-  {
-    label: 'Ownership',
-    value: '1 Acre of Land',
-    subtitle: 'Prime Location',
-  },
-  {
-    label: 'Leadership',
-    value: '1 Year as CEO',
-    subtitle: 'Subsidiary Company',
-  },
-];
-
 /**
- * Main App component
+ * Main App component with routing
  */
 function App() {
   // Add skip link for accessibility
@@ -66,21 +38,87 @@ function App() {
   }, []);
 
   return (
-    <>
-      <SEOHead />
-      <div className="page">
-        <Navbar />
-        <main id="main-content" tabIndex={-1}>
-          <Hero deadline={APPLICATION_DEADLINE} prizes={prizes} />
-          <About />
-          <Prizes />
-          <Eligibility />
-          <Sponsorship />
-        </main>
-        <Footer />
-        <ScrollToTop />
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            <Layout 
+              title="KeytoDCity Reality Show with Dr. Stephen Akintayo"
+              description="Apply for KeytoDCity Reality Show and stand a chance to win ₦100,000,000, 1 acre of land, and 1 year as CEO of a top subsidiary."
+            >
+              <HomePage />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/about" 
+          element={
+            <Layout 
+              title="About the Show | KeytoDCity Reality Show"
+              description="Learn about the KeytoDCity Reality Show, how it works, and meet Dr. Stephen Akintayo."
+            >
+              <AboutPage />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/prizes" 
+          element={
+            <Layout 
+              title="Prizes & Rewards | KeytoDCity Reality Show"
+              description="Win life-changing rewards worth over ₦150,000,000 including cash, car, land, and CEO position."
+            >
+              <PrizesPage />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/eligibility" 
+          element={
+            <Layout 
+              title="Eligibility & Requirements | KeytoDCity Reality Show"
+              description="Find out who can apply and what you need to join the KeytoDCity Reality Show."
+            >
+              <EligibilityPage />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/sponsorship" 
+          element={
+            <Layout 
+              title="Sponsorship & Partnership | KeytoDCity Reality Show"
+              description="Partner with us to create Africa's most impactful business reality show."
+            >
+              <SponsorshipPage />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/faq" 
+          element={
+            <Layout 
+              title="FAQ | KeytoDCity Reality Show"
+              description="Frequently asked questions about the KeytoDCity Reality Show application process and requirements."
+            >
+              <FAQPage />
+            </Layout>
+          } 
+        />
+        <Route 
+          path="/apply" 
+          element={
+            <Layout 
+              title="Apply Now | KeytoDCity Reality Show"
+              description="Apply for the KeytoDCity Reality Show. Complete the application form to get started."
+            >
+              <ApplicationPage />
+            </Layout>
+          } 
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

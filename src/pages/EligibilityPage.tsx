@@ -1,7 +1,6 @@
-import FAQ from './FAQ';
-import AnimatedSection from './AnimatedSection';
+import FAQ from '../components/FAQ';
+import AnimatedSection from '../components/AnimatedSection';
 import styles from '../styles/components/sections.module.css';
-import heroStyles from '../styles/components/hero.module.css';
 
 const eligibilityCriteria = [
   'Must have a Real Estate Course Certificate (obtain one at rim.stephenakintayofoundation.org if needed).',
@@ -37,9 +36,9 @@ const faqItems = [
 ];
 
 /**
- * Eligibility section component with criteria and FAQ
+ * Eligibility page component
  */
-export default function Eligibility() {
+export default function EligibilityPage() {
   return (
     <AnimatedSection id="eligibility">
       <div className={styles.sectionHeader}>
@@ -82,55 +81,21 @@ export default function Eligibility() {
         <h3 style={{
           fontSize: '1.5rem',
           marginBottom: '1rem',
-          color: 'var(--primary)'
         }}>
-          Real Estate Course Certificate Required
+          Certificate Required
         </h3>
-        <p style={{
-          fontSize: '1.1rem',
-          lineHeight: '1.6',
-          marginBottom: '1.5rem',
-          maxWidth: '800px',
-          margin: '0 auto 1.5rem'
-        }}>
-          <strong>Important:</strong> To apply for KeytoDCity Reality Show, you must have a <strong>Real Estate Course Certificate</strong>.
-          If you don't have one yet, you can get certified through our official program:
-        </p>
-        <button
-          className={heroStyles.btnPrimary}
-          onClick={() => window.open('https://rim.stephenakintayofoundation.org/', '_blank')}
-          style={{
-            fontSize: '1.1rem',
-            padding: '1rem 2.5rem',
-            marginBottom: '0.5rem'
-          }}
-        >
-          Get Your Certificate Here
-          <span aria-hidden="true">🎓</span>
-        </button>
-        <p style={{
-          marginTop: '1rem',
-          color: 'var(--text-muted)',
-          fontSize: '0.9rem'
-        }}>
-          Complete the course and obtain your certificate before submitting your application
-        </p>
-      </div>
-
-      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-        <button
-          className={heroStyles.btnPrimary}
-          onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGTdoSAiEbuWCMTinTVbDDJt23hKXwE-RAaasDFjkAj58MXQ/viewform?usp=publish-editor', '_blank')}
-          style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}
-        >
-          Apply Now - Start Your Application
-          <span aria-hidden="true">➜</span>
-        </button>
-        <p style={{ marginTop: '1rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-          Click above to open the application form in a new window
+        <p style={{ marginBottom: '1.5rem', lineHeight: '1.8' }}>
+          All applicants must have a Real Estate Course Certificate. Don't have one?{' '}
+          <a
+            href="https://rim.stephenakintayofoundation.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--primary)', textDecoration: 'underline', fontWeight: 'bold' }}
+          >
+            Get certified here
+          </a>
         </p>
       </div>
     </AnimatedSection>
   );
 }
-

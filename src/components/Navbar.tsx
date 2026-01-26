@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { smoothScrollTo } from '../utils/scroll';
+import { Link, useLocation } from 'react-router-dom';
 import styles from '../styles/components/navbar.module.css';
 
 /**
@@ -7,6 +7,7 @@ import styles from '../styles/components/navbar.module.css';
  */
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   // Close mobile menu when clicking outside or on a link
   useEffect(() => {
@@ -31,30 +32,18 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    smoothScrollTo(targetId);
-    setIsOpen(false);
-  };
-
-  const handleCtaClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGTdoSAiEbuWCMTinTVbDDJt23hKXwE-RAaasDFjkAj58MXQ/viewform?usp=publish-editor', '_blank');
-    setIsOpen(false);
-  };
-
-  const handleDonateClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    smoothScrollTo('sponsorship');
-    setIsOpen(false);
-  };
+  // const handleDonateClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  //   e.preventDefault();
+  //   smoothScrollTo('sponsorship');
+  //   setIsOpen(false);
+  // };
 
   return (
     <header className={`${styles.nav} ${isOpen ? styles.navOpen : ''}`} role="banner">
       <div className={styles.navInner}>
-        <a href="#top" className={styles.brand} aria-label="Go to top">
+        <Link to="/" className={styles.brand} aria-label="Go to home">
           <img 
-            src="/images/logo.png" 
+            src="/images/logo.jpeg" 
             alt="Stephen Akintayo Foundation Logo" 
             className={styles.brandLogo}
             onError={(e) => {
@@ -69,7 +58,7 @@ export default function Navbar() {
             <span>Dr. Stephen Akintayo</span>
             <span>KeytoDCity Reality Show</span>
           </div>
-        </a>
+        </Link>
 
         <button
           className={styles.navToggle}
@@ -83,35 +72,35 @@ export default function Navbar() {
         </button>
 
         <nav className={styles.navLinks} id="navLinks" role="navigation" aria-label="Main navigation">
-          <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>
+          <Link to="/about" onClick={() => setIsOpen(false)} className={location.pathname === '/about' ? styles.active : ''}>
             About
-          </a>
-          <a href="#prizes" onClick={(e) => handleNavClick(e, 'prizes')}>
+          </Link>
+          <Link to="/prizes" onClick={() => setIsOpen(false)} className={location.pathname === '/prizes' ? styles.active : ''}>
             Prizes
-          </a>
-          <a href="#eligibility" onClick={(e) => handleNavClick(e, 'eligibility')}>
+          </Link>
+          <Link to="/eligibility" onClick={() => setIsOpen(false)} className={location.pathname === '/eligibility' ? styles.active : ''}>
             Eligibility
-          </a>
-          <a href="#sponsorship" onClick={(e) => handleNavClick(e, 'sponsorship')}>
+          </Link>
+          <Link to="/sponsorship" onClick={() => setIsOpen(false)} className={location.pathname === '/sponsorship' ? styles.active : ''}>
             Sponsor
-          </a>
-          <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')}>
+          </Link>
+          <Link to="/faq" onClick={() => setIsOpen(false)} className={location.pathname === '/faq' ? styles.active : ''}>
             FAQ
-          </a>
+          </Link>
         </nav>
 
         <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-          <button 
+          {/* <button 
             className={styles.navDonate} 
             onClick={handleDonateClick} 
             aria-label="Donate to support the show"
           >
             💝 Donate
-          </button>
-          <button className={styles.navCta} onClick={handleCtaClick} aria-label="Apply now">
+          </button> */}
+          <Link to="/apply" className={styles.navCta} onClick={() => setIsOpen(false)} aria-label="Apply now">
             Apply Now
             <span aria-hidden="true">➜</span>
-          </button>
+          </Link>
         </div>
       </div>
     </header>

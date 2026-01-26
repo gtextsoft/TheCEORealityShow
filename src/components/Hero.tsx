@@ -1,4 +1,4 @@
-import { smoothScrollTo } from '../utils/scroll';
+import { Link } from 'react-router-dom';
 import CountdownTimer from './CountdownTimer';
 import type { Prize } from '../types';
 import styles from '../styles/components/hero.module.css';
@@ -12,10 +12,6 @@ interface HeroProps {
  * Hero section component with countdown timer and call-to-action
  */
 export default function Hero({ deadline, prizes }: HeroProps) {
-  const handleCtaClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGTdoSAiEbuWCMTinTVbDDJt23hKXwE-RAaasDFjkAj58MXQ/viewform?usp=publish-editor', '_blank');
-  };
 
   return (
     <section className={styles.hero}>
@@ -51,19 +47,62 @@ export default function Hero({ deadline, prizes }: HeroProps) {
         </div>
 
         <div className={styles.heroCtaGroup}>
-          <button className={styles.btnPrimary} onClick={handleCtaClick} aria-label="Apply to join the show">
+          <Link to="/apply" className={styles.btnPrimary} aria-label="Apply to join the show">
             Apply to Join the Show
             <span aria-hidden="true">⚡</span>
-          </button>
-          <button className={styles.btnOutline} onClick={(e) => { e.preventDefault(); smoothScrollTo('how-it-works'); }} aria-label="Learn how the reality show works">
+          </Link>
+          <Link to="/about#how-it-works" className={styles.btnOutline} aria-label="Learn how the reality show works">
             How the Reality Show Works
-          </button>
+          </Link>
         </div>
 
         <div className={styles.heroMeta}>
           <span>🎬 Filming: <strong>2026</strong> (Exact dates to be announced)</span>
           <span>🌍 Open to applicants across <strong>Nigeria & the diaspora</strong></span>
           <span>📺 Business, strategy, sales, leadership & impact</span>
+        </div>
+
+        {/* Social Media Links - Similar to DStv */}
+        <div className={styles.heroSocial}>
+          <h3 className={styles.heroSocialTitle}>Follow Us</h3>
+          <div className={styles.heroSocialLinks}>
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on Facebook"
+              className={styles.heroSocialLink}
+            >
+              <span aria-hidden="true">📘</span> Facebook
+            </a>
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
+              className={styles.heroSocialLink}
+            >
+              <span aria-hidden="true">📷</span> Instagram
+            </a>
+            <a 
+              href="https://youtube.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on YouTube"
+              className={styles.heroSocialLink}
+            >
+              <span aria-hidden="true">▶️</span> YouTube
+            </a>
+            <a 
+              href="https://twitter.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on Twitter"
+              className={styles.heroSocialLink}
+            >
+              <span aria-hidden="true">🐦</span> Twitter
+            </a>
+          </div>
         </div>
       </div>
 
@@ -85,20 +124,20 @@ export default function Hero({ deadline, prizes }: HeroProps) {
             </p>
           </div>
           <CountdownTimer deadline={deadline} />
-          <button
+          <Link
+            to="/apply"
             className={styles.btnPrimary}
-            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfGTdoSAiEbuWCMTinTVbDDJt23hKXwE-RAaasDFjkAj58MXQ/viewform?usp=publish-editor', '_blank')}
-            style={{ width: '100%', justifyContent: 'center' }}
+            style={{ width: '100%', justifyContent: 'center', textDecoration: 'none', display: 'flex' }}
             aria-label="Start your application"
           >
             Start Your Application
-          </button>
+          </Link>
 
           <p className={styles.heroCtaNote} style={{
-            background: 'rgba(249, 115, 22, 0.1)',
+            background: 'rgba(139, 92, 246, 0.1)',
             padding: '0.75rem',
             borderRadius: '8px',
-            border: '1px solid rgba(249, 115, 22, 0.3)',
+            border: '1px solid rgba(139, 92, 246, 0.3)',
             marginBottom: '0.75rem'
           }}>
             <strong>📜 Certificate Required:</strong> You must have a Real Estate Course Certificate to apply.{' '}

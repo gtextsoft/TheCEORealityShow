@@ -2,14 +2,14 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(20px);
   background: linear-gradient(
     to bottom,
-    rgba(15, 23, 42, 0.95),
-    rgba(15, 23, 42, 0.7),
-    transparent
+    rgba(10, 10, 10, 0.98),
+    rgba(20, 20, 20, 0.95)
   );
-  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .navInner {
@@ -85,6 +85,7 @@
   color: var(--text-muted);
   position: relative;
   padding-bottom: 0.15rem;
+  transition: color 0.25s ease;
 }
 
 .navLinks a::after {
@@ -99,26 +100,31 @@
 }
 
 .navLinks a:hover {
-  color: #e5e7eb;
+  color: var(--text-main);
 }
 
-.navLinks a:hover::after {
+.navLinks a:hover::after,
+.navLinks a.active::after {
   width: 100%;
+}
+
+.navLinks a.active {
+  color: var(--text-main);
 }
 
 .navDonate {
   padding: 0.45rem 1rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
   border: none;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #fefce8;
+  color: var(--text-main);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  box-shadow: 0 16px 35px rgba(15, 118, 110, 0.4);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   white-space: nowrap;
   animation: pulseDonate 2s ease-in-out infinite;
@@ -126,39 +132,41 @@
 
 @keyframes pulseDonate {
   0%, 100% {
-    box-shadow: 0 16px 35px rgba(15, 118, 110, 0.4);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
   }
   50% {
-    box-shadow: 0 20px 45px rgba(15, 118, 110, 0.6);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
   }
 }
 
 .navDonate:hover {
   transform: translateY(-1px);
-  box-shadow: 0 22px 50px rgba(15, 118, 110, 0.5);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
   animation: none;
 }
 
 .navCta {
   padding: 0.45rem 1.1rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border: none;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #0f172a;
+  color: var(--text-main);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  box-shadow: 0 16px 35px rgba(249, 115, 22, 0.35);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .navCta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 20px 45px rgba(249, 115, 22, 0.4);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
 }
 
 .navCta span {
@@ -192,12 +200,12 @@
     left: 0;
     right: 0;
     top: 100%;
-    background: rgba(15, 23, 42, 0.98);
+    background: rgba(10, 10, 10, 0.98);
     padding: 0.7rem 1.25rem 0.8rem 1.25rem;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .navOpen .navInner {
