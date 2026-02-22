@@ -1,5 +1,5 @@
 import { smoothScrollTo } from '../utils/scroll';
-import { FacebookIcon, InstagramIcon, YouTubeIcon, TwitterIcon } from './SocialIcons';
+import { FacebookIcon, InstagramIcon, YouTubeIcon, TikTokIcon } from './SocialIcons';
 import styles from '../styles/components/footer.module.css';
 
 import { Link } from 'react-router-dom';
@@ -57,7 +57,8 @@ export default function Footer() {
           <h3 className={styles.footerSocialTitle}>Follow Us</h3>
           <div className={styles.footerSocialLinks}>
             <a 
-              href="https://facebook.com" 
+              // href="https://facebook.com" 
+              href="https://www.facebook.com/profile.php?id=61588175109364" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Follow us on Facebook"
@@ -67,7 +68,8 @@ export default function Footer() {
               <span>Facebook</span>
             </a>
             <a 
-              href="https://instagram.com" 
+              // href="https://instagram.com" 
+              href="https://www.instagram.com/keystodcity/" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Follow us on Instagram"
@@ -77,7 +79,8 @@ export default function Footer() {
               <span>Instagram</span>
             </a>
             <a 
-              href="https://youtube.com" 
+              // href="https://youtube.com" 
+              href="https://www.youtube.com/@keystodcity" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Follow us on YouTube"
@@ -87,14 +90,15 @@ export default function Footer() {
               <span>YouTube</span>
             </a>
             <a 
-              href="https://twitter.com" 
+              // href="https://twitter.com" 
+              href="https://www.tiktok.com/@keystodcity" 
               target="_blank" 
               rel="noopener noreferrer"
-              aria-label="Follow us on Twitter"
+              aria-label="Follow us on TikTok"
               className={styles.socialLink}
             >
-              <TwitterIcon className={styles.socialIcon} />
-              <span>Twitter</span>
+              <TikTokIcon className={styles.socialIcon} />
+              <span>TikTok</span>
             </a>
           </div>
         </div>

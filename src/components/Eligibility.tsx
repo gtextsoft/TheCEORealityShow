@@ -4,7 +4,7 @@ import styles from '../styles/components/sections.module.css';
 import heroStyles from '../styles/components/hero.module.css';
 
 const eligibilityCriteria = [
-  'Must have a Real Estate Course Certificate (obtain one at rim.stephenakintayofoundation.org if needed).',
+  // 'Must have a Real Estate Course Certificate (obtain one at rim.stephenakintayofoundation.org if needed).',
   'Must be at least 21 years old at the time of application.',
   'Open to Nigerians and Africans in the diaspora (valid travel documents may be required if selected).',
   'Must be able to commit to the full duration of filming if selected as a housemate.',
@@ -70,7 +70,7 @@ export default function Eligibility() {
       </div>
 
       {/* Certificate Requirement Notice */}
-      <div style={{
+      {/* <div style={{
         marginTop: '2.5rem',
         padding: '2rem',
         background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%)',
@@ -115,7 +115,7 @@ export default function Eligibility() {
         }}>
           Complete the course and obtain your certificate before submitting your application
         </p>
-      </div>
+      </div> */}
 
       <div style={{ marginTop: '3rem', textAlign: 'center' }}>
         <button

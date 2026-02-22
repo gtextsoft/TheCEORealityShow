@@ -48,7 +48,7 @@ export default function Hero({ deadline, prizes }: HeroProps) {
             Start Your Application
           </Link>
 
-          <p className={styles.heroCtaNote} style={{
+          {/* <p className={styles.heroCtaNote} style={{
             background: 'rgba(139, 92, 246, 0.1)',
             padding: '0.75rem',
             borderRadius: '8px',
@@ -64,7 +64,7 @@ export default function Hero({ deadline, prizes }: HeroProps) {
             >
               Get one here
             </a> if you don't have it yet.
-          </p>
+          </p> */}
 
           <p className={styles.heroCtaNote}>
             No payment required at this stage. Shortlisted candidates will be contacted directly
@@ -130,7 +130,7 @@ export default function Hero({ deadline, prizes }: HeroProps) {
           <h3 className={styles.heroSocialTitle}>Follow Us</h3>
           <div className={styles.heroSocialLinks}>
             <a 
-              href="https://facebook.com" 
+              href="https://www.facebook.com/profile.php?id=61588175109364" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Follow us on Facebook"
@@ -140,7 +140,7 @@ export default function Hero({ deadline, prizes }: HeroProps) {
               <span>Facebook</span>
             </a>
             <a 
-              href="https://instagram.com" 
+              href="https://www.instagram.com/keystodcity/" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Follow us on Instagram"
@@ -150,7 +150,7 @@ export default function Hero({ deadline, prizes }: HeroProps) {
               <span>Instagram</span>
             </a>
             <a 
-              href="https://youtube.com" 
+              href="https://www.youtube.com/@keystodcity" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Follow us on YouTube"
@@ -160,14 +160,14 @@ export default function Hero({ deadline, prizes }: HeroProps) {
               <span>YouTube</span>
             </a>
             <a 
-              href="https://twitter.com" 
+              href="https://www.tiktok.com/@keystodcity" 
               target="_blank" 
               rel="noopener noreferrer"
-              aria-label="Follow us on Twitter"
+              aria-label="Follow us on TikTok"
               className={styles.heroSocialLink}
             >
               <TwitterIcon className={styles.socialIcon} />
-              <span>Twitter</span>
+              <span>TikTok</span>
             </a>
           </div>
         </div>
