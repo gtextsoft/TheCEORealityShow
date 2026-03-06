@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { validateEmail, validatePhone, validateURL } from '../utils/validation';
 import { announceToScreenReader } from '../utils/accessibility';
+import { submitApplication } from '../api/client';
 import type { ApplicationFormData, ReferralSource } from '../types';
 import styles from '../styles/components/form.module.css';
 import heroStyles from '../styles/components/hero.module.css';
@@ -175,51 +176,30 @@ export default function ApplicationForm() {
     }
 
     try {
-      // Send email using mailto link (opens email client)
-      const email = 'info@saproductiontv.com';
-      const subject = encodeURIComponent('KeystoDCity Reality Show Application');
-      const body = encodeURIComponent(
-        `New Application Submission\n\n` +
-        `First Name: ${data.firstName}\n` +
-        `Last Name: ${data.lastName}\n` +
-        `Email: ${data.email}\n` +
-        `Phone: ${data.phone}\n` +
-        `State: ${data.state}\n` +
-        `Age: ${data.age}\n` +
-        `Occupation: ${data.occupation}\n` +
-        `Social Media: ${data.socials}\n` +
-        `Video Uploaded: Yes\n` +
-        `Referral Source: ${data.referral}\n` +
-        `Submitted At: ${new Date().toISOString()}`
-      );
+      const formData = new FormData();
+      formData.append('firstName', data.firstName);
+      formData.append('lastName', data.lastName);
+      formData.append('email', data.email);
+      formData.append('phone', data.phone);
+      formData.append('state', data.state);
+      formData.append('age', String(data.age));
+      formData.append('occupation', data.occupation);
+      formData.append('experience', data.experience);
+      formData.append('whyYou', data.whyYou);
+      formData.append('socials', data.socials);
+      formData.append('referral', data.referral);
+      if (data.video && data.video.length > 0) {
+        formData.append('video', data.video[0]);
+      }
 
-      // Store in localStorage first
-      const submissions = JSON.parse(localStorage.getItem('ceo-reality-show-submissions') || '[]');
-      submissions.push({
-        ...data,
-        submittedAt: new Date().toISOString(),
-      });
-      localStorage.setItem('ceo-reality-show-submissions', JSON.stringify(submissions));
+      await submitApplication(formData);
 
-      // Clear draft
       setSavedDraft({});
       localStorage.removeItem(FORM_STORAGE_KEY);
-
-      // Open email client to send the application
-      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-
-      // Small delay to allow email client to open, then show success
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
-      // Reset form
       reset();
       setShowSuccess(true);
       setLastSaved(null);
-
-      // Announce success to screen readers
       announceToScreenReader('Your application has been submitted successfully. Our team will review and contact shortlisted candidates via email.', 'polite');
-
-      // Scroll to success message
       setTimeout(() => {
         const successBanner = document.getElementById('formSuccess');
         if (successBanner) {

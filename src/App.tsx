@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
+import ProtectedRoute from './components/ProtectedRoute';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import PrizesPage from './pages/PrizesPage';
@@ -8,6 +9,8 @@ import EligibilityPage from './pages/EligibilityPage';
 import SponsorshipPage from './pages/SponsorshipPage';
 import FAQPage from './pages/FAQPage';
 import ApplicationPage from './pages/ApplicationPage';
+import AdminLoginPage from './pages/AdminLoginPage';
+import AdminDashboardPage from './pages/AdminDashboardPage';
 import './styles/globals.css';
 
 /**
@@ -117,6 +120,16 @@ function App() {
             </Layout>
           } 
         />
+        <Route path="/admin/login" element={<AdminLoginPage />} />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminDashboardPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/admin/*" element={<Navigate to="/admin" replace />} />
       </Routes>
     </BrowserRouter>
   );
