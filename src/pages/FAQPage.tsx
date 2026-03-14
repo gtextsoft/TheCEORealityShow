@@ -26,7 +26,7 @@ const faqItems = [
   {
     question: 'What is the application deadline?',
     answer:
-      'Applications close on <strong>March 21, 2026</strong>. Make sure to submit your complete application before the deadline.',
+      'Applications close on <strong>May 1, 2026</strong>. Make sure to submit your complete application before the deadline.',
   },
   {
     question: 'Do I need a Real Estate Certificate?',
