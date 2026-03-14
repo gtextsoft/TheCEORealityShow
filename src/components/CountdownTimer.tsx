@@ -44,25 +44,25 @@ export default function CountdownTimer({ deadline, onComplete }: CountdownTimerP
     <div className={styles.heroCountdown} role="timer" aria-live="polite" aria-label="Application deadline countdown">
       <div className={styles.heroCountdownItem}>
         <div className={styles.heroCountdownNumber} data-unit="days">
-          {String(days).padStart(2, '0')}
+          {formatUnit(days)}
         </div>
         <div className={styles.heroCountdownLabel}>Days</div>
       </div>
       <div className={styles.heroCountdownItem}>
         <div className={styles.heroCountdownNumber} data-unit="hours">
-          {String(hours).padStart(2, '0')}
+          {formatUnit(hours)}
         </div>
         <div className={styles.heroCountdownLabel}>Hours</div>
       </div>
       <div className={styles.heroCountdownItem}>
         <div className={styles.heroCountdownNumber} data-unit="minutes">
-          {String(minutes).padStart(2, '0')}
+          {formatUnit(minutes)}
         </div>
         <div className={styles.heroCountdownLabel}>Minutes</div>
       </div>
       <div className={styles.heroCountdownItem}>
         <div className={styles.heroCountdownNumber} data-unit="seconds">
-          {String(seconds).padStart(2, '0')}
+          {formatUnit(seconds)}
         </div>
         <div className={styles.heroCountdownLabel}>Seconds</div>
       </div>
