@@ -15,9 +15,13 @@ export function useCountdown(deadline: Date, onComplete?: () => void): Countdown
   const [isExpired, setIsExpired] = useState(false);
 
   useEffect(() => {
+    const deadlineTime = deadline instanceof Date ? deadline.getTime() : new Date(deadline).getTime();
+    if (Number.isNaN(deadlineTime)) {
+      return;
+    }
+
     const calculateTimeLeft = (): CountdownTime => {
       const now = new Date().getTime();
-      const deadlineTime = deadline.getTime();
       const difference = deadlineTime - now;
 
       if (difference <= 0) {

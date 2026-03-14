@@ -2,8 +2,8 @@ import Hero from '../components/Hero';
 // import Showcase from '../components/Showcase';
 import type { Prize } from '../types';
 
-// Application deadline - April 30, 2026 (40 days after launch date)
-const APPLICATION_DEADLINE = new Date('2026-05-1T23:59:59');
+// Application deadline - May 1, 2026, 23:59:59 local time (month is 0-indexed)
+const APPLICATION_DEADLINE = new Date(2026, 4, 1, 23, 59, 59);
 
 // Prize information
 const prizes: Prize[] = [

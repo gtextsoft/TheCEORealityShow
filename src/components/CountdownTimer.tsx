@@ -9,6 +9,11 @@ interface CountdownTimerProps {
 /**
  * Countdown timer component displaying days, hours, minutes, and seconds
  */
+function formatUnit(n: number): string {
+  const value = Number.isFinite(n) && n >= 0 ? n : 0;
+  return String(Math.floor(value)).padStart(2, '0');
+}
+
 export default function CountdownTimer({ deadline, onComplete }: CountdownTimerProps) {
   const { days, hours, minutes, seconds, isExpired } = useCountdown(deadline, onComplete);
 
